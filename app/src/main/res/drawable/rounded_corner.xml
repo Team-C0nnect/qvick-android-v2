@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+
+        android:type="linear"
+        android:angle="45"
+        android:startColor="@color/white"
+        android:endColor="@color/white"/>
+
+    <!--    <solid android:color="#7EF192"/>-->
+    <!-- 테두리 설정 -->
+    <!--    <stroke android:width="3dp"-->
+    <!--        android:color="#C71616" />-->
+    <!-- 페딩 -->
+    <!--    <padding android:left="1dp"-->
+    <!--        android:top="1dp"-->
+    <!--        android:right="1dp"-->
+    <!--        android:bottom="1dp" />-->
+
+    <corners android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"/>
+</shape>
