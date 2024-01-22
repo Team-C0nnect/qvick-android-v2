@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Qvick_Android"
         tools:targetApi="31">
         <activity
+            android:name=".StudentIDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TermsOfUseActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginToDAuthActivity"
             android:exported="false" />
         <activity
