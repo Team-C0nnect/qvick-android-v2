@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.hs.dgsw.android.qvick"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.hs.dgsw.android.qvick"
@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
+
 }
 
 dependencies {

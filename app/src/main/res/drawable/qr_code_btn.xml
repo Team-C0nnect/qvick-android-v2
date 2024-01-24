@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/rounded_corner" />
+    <item
+        android:drawable="@drawable/qr"
+        android:width="80dp"
+        android:height="80dp"
+        android:gravity="center_vertical" />
+
+</layer-list>

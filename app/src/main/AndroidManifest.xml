@@ -13,8 +13,17 @@
         android:theme="@style/Theme.Qvick_Android"
         tools:targetApi="31">
         <activity
-            android:name=".StudentIdActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
+        <activity
+            android:name=".StudentIdActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".TermsOfUseActivity"
             android:exported="false" />
@@ -25,16 +34,9 @@
             android:name=".SchoolSelectionActivity"
             android:exported="false" />
         <activity
-            android:name=".Schoolelection"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

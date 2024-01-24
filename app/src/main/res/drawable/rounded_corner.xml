@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-
+        
         android:type="linear"
         android:angle="45"
         android:startColor="@color/white"
         android:endColor="@color/white"/>
+
 
     <!--    <solid android:color="#7EF192"/>-->
     <!-- 테두리 설정 -->
@@ -17,8 +18,8 @@
     <!--        android:right="1dp"-->
     <!--        android:bottom="1dp" />-->
 
-    <corners android:bottomRightRadius="10dp"
-        android:bottomLeftRadius="10dp"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"/>
+    <corners android:bottomRightRadius="20dp"
+        android:bottomLeftRadius="20dp"
+        android:topLeftRadius="20dp"
+        android:topRightRadius="20dp"/>
 </shape>

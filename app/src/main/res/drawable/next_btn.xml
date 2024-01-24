@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/rounded_corner" />
+
+    <item
+        android:drawable="@drawable/check"
+        android:width="125dp"
+        android:height="75dp"
+        android:gravity="center_vertical"/>
+
+    <item
+        android:left="110dp"
+        android:drawable="@drawable/baseline_arrow_forward_ios_24"
+        android:width="24dp"
+        android:height="24dp"
+        android:gravity="center_vertical" />
+
+</layer-list>
