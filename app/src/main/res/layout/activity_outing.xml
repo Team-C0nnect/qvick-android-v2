@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A3F4A"
+    tools:context=".OutingActivity">
+
+
+    <TextView
+        android:layout_width="65dp"
+        android:layout_height="22dp"
+        android:text="외출날짜"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="205dp"
+        android:layout_marginRight="260dp"
+        />
+
+    <TextView
+        android:layout_width="65dp"
+        android:layout_height="22dp"
+        android:text="외출시간"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="265dp"
+        android:layout_marginRight="260dp"
+        />
+
+    <TextView
+        android:layout_width="65dp"
+        android:layout_height="22dp"
+        android:text="복귀시간"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="315dp"
+        android:layout_marginRight="260dp"
+        />
+
+    <TextView
+        android:layout_width="65dp"
+        android:layout_height="22dp"
+        android:text="외출사유"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="355dp"
+        android:layout_marginRight="260dp"
+        />
+
+
+    <DatePicker
+        android:layout_width="250dp"
+        android:layout_height="57dp"
+        android:background="@drawable/rounded_corner"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:spinnersShown="true"
+        android:theme="@style/CustomTimePicker"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="190dp"
+        android:layout_marginRight="-80dp"
+        />
+
+    <TimePicker
+        android:layout_width="252dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="-80dp"
+        android:background="@drawable/rounded_corner"
+        android:theme="@style/CustomTimePicker"
+        android:timePickerMode="spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TimePicker
+        android:layout_width="252dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginRight="-80dp"
+        android:background="@drawable/rounded_corner"
+        android:theme="@style/CustomTimePicker"
+        android:timePickerMode="spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/reasonText"
+        android:layout_width="246dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_corner"
+        android:hint="  외박사유를 적어주세요"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="-80dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="333dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="신청"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#41C982"
+        android:layout_marginTop="600dp"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
