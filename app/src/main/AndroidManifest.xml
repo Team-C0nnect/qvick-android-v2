@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Qvick_Android"
         tools:targetApi="31">
         <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity

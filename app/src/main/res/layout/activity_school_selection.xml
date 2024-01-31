@@ -57,6 +57,7 @@
                 android:background="@drawable/rounded_corner"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="15dp"
+                android:padding="5dp"
                 android:text="대구소프웨어마이스터고등학교"
                 android:textStyle="bold"
                 android:textSize="22dp"
