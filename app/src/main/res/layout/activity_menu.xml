@@ -20,6 +20,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backBtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,6 +33,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goProfileBtn"
         android:layout_width="347dp"
         android:layout_height="106dp"
         android:layout_marginTop="128dp"
@@ -80,6 +82,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goOutingBtn"
         android:layout_width="70dp"
         android:layout_height="25dp"
         android:text="외박신청"
@@ -94,6 +97,7 @@
         android:layout_marginRight="260dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goPrivacyBtn"
         android:layout_width="111dp"
         android:layout_height="25dp"
         android:text="개인정보 약관"

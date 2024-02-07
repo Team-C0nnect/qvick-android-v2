@@ -9,14 +9,14 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/backTermsOfUseBtn"
+        android:id="@+id/backBtn"
         android:layout_width="30dp"
         android:layout_height="35dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:layout_marginRight="320dp"
         android:background="@drawable/baseline_arrow_back_ios_new_24"
         android:backgroundTint="@color/white"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

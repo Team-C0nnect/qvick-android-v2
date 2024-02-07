@@ -8,7 +8,7 @@
     tools:context=".EditProfileActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/backProfileBtn"
+        android:id="@+id/backBtn"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="30dp"
@@ -36,6 +36,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/finishBtn"
         android:layout_width="70dp"
         android:layout_height="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
