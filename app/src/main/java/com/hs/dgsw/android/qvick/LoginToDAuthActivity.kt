@@ -13,7 +13,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.hs.dgsw.android.qvick.databinding.ActivityLoginToDauthBinding
-import com.hs.dgsw.android.qvick.local.QvickDateBase
+import com.hs.dgsw.android.qvick.local.QvickDataBase
 import com.hs.dgsw.android.qvick.local.TokenEntity
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.remote.request.LoginRequest
@@ -51,7 +51,7 @@ class LoginToDAuthActivity : AppCompatActivity() {
 
                 lifecycleScope.launch (Dispatchers.IO) {
                     runBlocking {
-                        fcmToken = QvickDateBase.getInstance(applicationContext)?.fcmTokenDao()?.getMembers()?.fcmToken.toString()
+                        fcmToken = QvickDataBase.getInstance(applicationContext)?.fcmTokenDao()?.getMembers()?.fcmToken.toString()
                     }
 
                     RetrofitBuilder.getLoginService().login(

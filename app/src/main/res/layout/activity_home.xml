@@ -21,6 +21,7 @@
         />
     
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/settingBtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
