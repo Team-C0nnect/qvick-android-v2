@@ -1,9 +1,12 @@
 package com.hs.dgsw.android.qvick.remote
 
+import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.hs.dgsw.android.qvick.remote.interceptor.TokenInterceptor
 import com.hs.dgsw.android.qvick.remote.service.LoginService
+import com.hs.dgsw.android.qvick.remote.service.RoomService
+import com.hs.dgsw.android.qvick.remote.service.StudentService
 import com.hs.dgsw.android.qvick.remote.service.TokenService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -26,6 +29,8 @@ class RetrofitBuilder {
         private var tokenRetrofit: Retrofit? = null
         private var loginService: LoginService? = null
         private var tokenService: TokenService? = null
+        private var studentService: StudentService? = null
+        private var roomService: RoomService? = null
 
         @Synchronized
         fun getGson(): Gson? {
@@ -136,6 +141,21 @@ class RetrofitBuilder {
             return loginService!!
         }
 
+        @Synchronized
+        fun getStudentService(): StudentService {
+            if (studentService == null) {
+                studentService = getRetrofit().create(StudentService::class.java)
+            }
+            return studentService!!
+        }
+
+        @Synchronized
+        fun getRoomService(): RoomService{
+            if (roomService == null) {
+                roomService = getRetrofit().create(RoomService::class.java)
+            }
+            return roomService!!
+        }
 
         @Synchronized
         fun getTokenService(): TokenService {
