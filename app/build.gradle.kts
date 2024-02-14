@@ -72,15 +72,13 @@ dependencies {
     // google login
     implementation("com.google.android.gms:play-services-ads-base:22.6.0")
 
+
     // CameraX Core library
     implementation ("androidx.camera:camera-core:1.1.0-alpha10")
-
     // CameraX Lifecycle Library
     implementation ("androidx.camera:camera-lifecycle:1.1.0-alpha10")
-
     // CameraX View class
     implementation ("androidx.camera:camera-view:1.0.0-alpha26")
-
     // Use camera extensions
     implementation ("androidx.camera:camera-extensions:1.0.0-alpha26")
 }

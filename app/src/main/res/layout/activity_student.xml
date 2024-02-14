@@ -119,7 +119,7 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="20dp"
-        android:text="자신의 기숙사 동호수를 작성해주세"
+        android:text="자신의 기숙사 동호수를 작성해주세요"
         android:textColor="@color/white"
         android:textAlignment="center"
         android:textStyle="bold"

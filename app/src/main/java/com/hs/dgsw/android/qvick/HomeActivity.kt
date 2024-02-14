@@ -15,11 +15,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // 메뉴 화면으로 이동
         binding.settingBtn.setOnClickListener {
             intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
 
+        // BottomSheetDialogFragment뷰가 올라옴
         binding.qrCameraBtn.setOnClickListener {
             val bottomSheetDialogFragment = BottomSheetDialogFragment()
             bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.tag)
