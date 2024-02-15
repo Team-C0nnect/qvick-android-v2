@@ -23,8 +23,8 @@ class HomeActivity : AppCompatActivity() {
 
         // BottomSheetDialogFragment뷰가 올라옴
         binding.qrCameraBtn.setOnClickListener {
-            val bottomSheetDialogFragment = BottomSheetDialogFragment()
-            bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.tag)
+            val bottomSheetFragment = BottomSheetFragment()
+            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
         }
 
     }

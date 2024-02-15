@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".BottomSheetFragment"
+    android:padding="20dp">
+
+<!--    카메라 뷰로 변경 해야함-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="280dp"
+        android:background="@drawable/baseline_close_24"
+        android:backgroundTint="@color/black"
+        />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QR 코드를 인식하여 출석체크 해 주세요"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/baseline_crop_free_24"
+        android:layout_marginBottom="200dp"
+        />
+
+</LinearLayout>
