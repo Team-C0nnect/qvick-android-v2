@@ -14,6 +14,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
         // 프로필 수정 화면으로 이동
         binding.editBtn.setOnClickListener {
             intent = Intent(this, EditProfileActivity::class.java)

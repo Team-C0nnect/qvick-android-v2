@@ -25,22 +25,20 @@ class StudentIdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        var classNumber = binding.studentID
-        var roomNumber = binding.dormitoryLake
 
         // 홈 화면으로 이동
         binding.nextPageBtn.setOnClickListener {
 
-            var classNumberSave = classNumber.text.toString()
-            var roomNumberSave = roomNumber.text.toString()
+            var classNumberSave = binding.studentID.text.toString()
+            var roomNumberSave = binding.dormitoryLake.text.toString()
 
             // 학번 입력 확인
-            if (binding.studentID.text.toString().trim().isEmpty()){
-                Toast.makeText(this, "학번을 입력해 주세요", Toast.LENGTH_SHORT).show()
+            if (classNumberSave.isEmpty()){
+                Toast.makeText(applicationContext, "학번을 입력해 주세요", Toast.LENGTH_SHORT).show()
 
             // 기숙사 호실 입력 확인
-            } else if (binding.dormitoryLake.text.toString().trim().isEmpty()){
-                Toast.makeText(this, "기숙사 호실을 입력해 주세요", Toast.LENGTH_SHORT).show()
+            } else if (roomNumberSave.isEmpty()){
+                Toast.makeText(applicationContext, "기숙사 호실을 입력해 주세요", Toast.LENGTH_SHORT).show()
             } else{
 
                 // 학번 서버로 보내기
