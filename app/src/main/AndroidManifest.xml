@@ -27,9 +27,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Qvick_Android"
         tools:targetApi="31" >
-        <activity
-            android:name=".HomeBottomSheetDialogFragment"
-            android:exported="false" />
+
         <activity
             android:name=".MenuActivity"
             android:exported="false" />

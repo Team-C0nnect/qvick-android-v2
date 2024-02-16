@@ -1,5 +1,6 @@
 package com.hs.dgsw.android.qvick
 
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -14,16 +15,15 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.math.log
 
 
-class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
+class PrivacyBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_service_bottom_sheet, container, false)
+        return inflater.inflate(R.layout.fragment_privacy_bottom_sheet, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,16 +32,13 @@ class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
         // html text 불러오기
         lifecycleScope.launch(Dispatchers.IO){
             kotlin.runCatching {
-                RetrofitBuilder.getUseTermsService().getUseTerms()
-            }.onSuccess { response ->
+                RetrofitBuilder.getPrivacyTermsService().getPrivacyTerms()
+            }.onSuccess {response ->
                 Log.d(TAG, "onCreate: 성공!!")
+                val htmlDate = response.toString()
 
-                val htmlData = response.toString() // HTML 데이터
-
-                var serviceText = view.findViewById<TextView>(R.id.serviceText)
-                serviceText.text = htmlData
-
-
+                var privacyText = view.findViewById<TextView>(R.id.privacyText)
+                privacyText.text = htmlDate
             }.onFailure {
                 Log.d(TAG, "onCreate: 실패")
             }
