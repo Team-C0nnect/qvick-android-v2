@@ -73,12 +73,8 @@ dependencies {
     implementation("com.google.android.gms:play-services-ads-base:22.6.0")
 
 
-    // CameraX Core library
-    implementation ("androidx.camera:camera-core:1.1.0-alpha10")
-    // CameraX Lifecycle Library
-    implementation ("androidx.camera:camera-lifecycle:1.1.0-alpha10")
-    // CameraX View class
-    implementation ("androidx.camera:camera-view:1.0.0-alpha26")
-    // Use camera extensions
-    implementation ("androidx.camera:camera-extensions:1.0.0-alpha26")
+    // cameraX
+    implementation("androidx.camera:camera-view:1.3.1")
+    implementation("androidx.camera:camera-camera2:1.3.1-rc01")
+    implementation("androidx.camera:camera-lifecycle:1.3.1")
 }
