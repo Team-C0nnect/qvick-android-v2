@@ -31,6 +31,12 @@ class TermsOfUseActivity : AppCompatActivity() {
         }
 
 
+        binding.termsOfServiceBtn.setOnClickListener {
+            val serviceBottomSheetFragment = ServiceBottomSheetFragment()
+            serviceBottomSheetFragment.show(supportFragmentManager, serviceBottomSheetFragment.tag)
+        }
+
+
         // 학번/기숙사 호실 입력 화면으로 이동
         binding.nextPageBtn.setOnClickListener {
             if (binding.termsOfServiceCB.isChecked &&
