@@ -12,18 +12,22 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.hs.dgsw.android.qvick.databinding.FragmentPrivacyBottomSheetBinding
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
 class PrivacyBottomSheetFragment : BottomSheetDialogFragment() {
+
+    private lateinit var mBinding: FragmentPrivacyBottomSheetBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_privacy_bottom_sheet, container, false)
+        mBinding = FragmentPrivacyBottomSheetBinding.inflate(inflater, container, false)
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,8 +49,7 @@ class PrivacyBottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         // 완료 버튼 구현
-        val completeBtn = view.findViewById<AppCompatButton>(R.id.completeBtn)
-        completeBtn.setOnClickListener {
+        mBinding.completeBtn.setOnClickListener {
             dismiss()
         }
     }

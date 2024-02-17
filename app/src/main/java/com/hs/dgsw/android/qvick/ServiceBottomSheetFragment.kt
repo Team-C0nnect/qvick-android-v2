@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.hs.dgsw.android.qvick.databinding.FragmentServiceBottomSheetBinding
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,12 +19,16 @@ import kotlin.math.log
 
 
 class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
+
+    private lateinit var mBinding: FragmentServiceBottomSheetBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_service_bottom_sheet, container, false)
+        mBinding = FragmentServiceBottomSheetBinding.inflate(inflater, container, false)
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,8 +53,7 @@ class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         // 완료 버튼 구현
-        val completeBtn = view.findViewById<AppCompatButton>(R.id.completeBtn)
-        completeBtn.setOnClickListener {
+        mBinding.completeBtn.setOnClickListener {
             dismiss()
         }
     }
