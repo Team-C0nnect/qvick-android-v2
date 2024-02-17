@@ -29,13 +29,16 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         />
-    <ImageView
+    <androidx.camera.view.PreviewView
         android:layout_marginTop="30dp"
+        android:id="@+id/viewFinder"
+        android:layout_width="268dp"
         android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:background="@drawable/baseline_crop_free_24"
-        android:layout_marginBottom="200dp"
-        />
+        android:layout_height="268dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
 
 </LinearLayout>

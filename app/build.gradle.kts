@@ -57,6 +57,9 @@ dependencies {
     implementation ("com.google.android.gms:play-services-auth:20.7.0")
     implementation("com.google.gms:google-services:4.4.0")
 
+    implementation ("com.google.guava:guava:30.1-android")
+    
+
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -75,6 +78,6 @@ dependencies {
 
     // cameraX
     implementation("androidx.camera:camera-view:1.3.1")
-    implementation("androidx.camera:camera-camera2:1.3.1-rc01")
+    implementation("androidx.camera:camera-camera2:1.3.1")
     implementation("androidx.camera:camera-lifecycle:1.3.1")
 }
