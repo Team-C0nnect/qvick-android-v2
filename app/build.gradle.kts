@@ -9,6 +9,9 @@ plugins {
 android {
     namespace = "com.hs.dgsw.android.qvick"
     compileSdk = 34
+    packagingOptions {
+        packagingOptions { resources.excludes.add("META-INF/*") }
+    }
 
     defaultConfig {
         applicationId = "com.hs.dgsw.android.qvick"
@@ -30,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures{
         viewBinding = true
@@ -48,15 +51,16 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.android.gms:play-services-base:18.3.0")
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation("com.google.firebase:firebase-bom:28.4.2")
-    implementation("com.google.firebase:firebase-ml-vision-barcode-model:16.1.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+    implementation("com.google.gms:google-services:4.3.15")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.3.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.google.android.gms:play-services-auth:20.7.0")
     implementation("com.google.gms:google-services:4.4.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation ("com.google.guava:guava:30.1-android")
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "246755219900",
+    "project_id": "qvick-410805",
+    "storage_bucket": "qvick-410805.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246755219900:android:0b2d3beb7f5f1b472ef3b9",
+        "android_client_info": {
+          "package_name": "com.hs.dgsw.android.qvick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246755219900-6dvpou8m5lktd4jgfd23i3cv24f1pkq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd_TpwFiTbj3E-T6jBkI3VbNN2g6BUxTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246755219900-6dvpou8m5lktd4jgfd23i3cv24f1pkq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
