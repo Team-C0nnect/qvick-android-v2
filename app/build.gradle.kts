@@ -50,7 +50,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.gms:play-services-base:18.3.0")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation("com.google.firebase:firebase-messaging-ktx:23.4.0")
+    implementation("com.google.firebase:firebase-bom:28.4.2")
+    implementation("com.google.firebase:firebase-ml-vision-barcode-model:16.1.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -58,7 +59,7 @@ dependencies {
     implementation("com.google.gms:google-services:4.4.0")
 
     implementation ("com.google.guava:guava:30.1-android")
-    
+
 
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -80,4 +81,6 @@ dependencies {
     implementation("androidx.camera:camera-view:1.3.1")
     implementation("androidx.camera:camera-camera2:1.3.1")
     implementation("androidx.camera:camera-lifecycle:1.3.1")
+
+    // zxing
 }
