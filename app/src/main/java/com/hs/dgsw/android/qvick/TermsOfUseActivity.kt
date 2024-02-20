@@ -23,9 +23,6 @@ class TermsOfUseActivity : AppCompatActivity() {
             if (!binding.PrivacyCB.isChecked) {
                 binding.PrivacyCB.isChecked = true
             }
-            if (!binding.PrivacyCB2.isChecked) {
-                binding.PrivacyCB2.isChecked = true
-            }
 
         }
 
@@ -39,8 +36,7 @@ class TermsOfUseActivity : AppCompatActivity() {
         // 학번/기숙사 호실 입력 화면으로 이동
         binding.nextPageBtn.setOnClickListener {
             if (binding.termsOfServiceCB.isChecked &&
-                binding.PrivacyCB.isChecked &&
-                binding.PrivacyCB2.isChecked){
+                binding.PrivacyCB.isChecked){
 
                 intent = Intent(this, StudentIdActivity::class.java)
                 startActivity(intent)

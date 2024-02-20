@@ -202,45 +202,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/PrivacyCB2"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:button="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="300dp"
-        android:layout_marginTop="470dp"
-        android:background="@drawable/circular_check_box"
-        />
-
-    <TextView
-        android:layout_width="228dp"
-        android:layout_height="27dp"
-        android:text="개인정보 제3자 정보제공 동의(필수)"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="468dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/PrivacyBtn2"
-        android:layout_width="20dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="468dp"
-        android:layout_marginRight="-300dp"
-        android:background="@drawable/baseline_arrow_forward_ios_24"
-        android:backgroundTint="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.appcompat.widget.AppCompatButton
