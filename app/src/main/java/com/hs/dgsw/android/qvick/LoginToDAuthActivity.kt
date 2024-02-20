@@ -72,7 +72,7 @@ class LoginToDAuthActivity : AppCompatActivity() {
 
                             lifecycleScope.launch(Dispatchers.Main) {
                                 val intent =
-                                    Intent(applicationContext, TermsOfUseActivity::class.java)
+                                    Intent(applicationContext, MainActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             }
