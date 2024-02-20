@@ -54,7 +54,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="300dp"
+        android:layout_marginRight="270dp"
         app:tint="@color/white" />
     
     <TextView
@@ -68,7 +68,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="270dp"
+        android:layout_marginRight="240dp"
         android:layout_marginTop="170dp"
         />
 
@@ -83,15 +83,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="90dp"
+        android:layout_marginRight="60dp"
         android:layout_marginTop="210dp"/>
 
     <View
         android:layout_width="340dp"
         android:layout_height="60dp"
         android:layout_marginTop="252dp"
-        android:layout_marginRight="52dp"
         android:background="@drawable/border"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,7 +103,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="320dp"
+        android:layout_marginRight="290dp"
         android:layout_marginTop="270dp"
         android:background="@drawable/circular_check_box"
         />
@@ -118,7 +118,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="180dp"
+        android:layout_marginRight="150dp"
         android:layout_marginTop="268dp"
         />
 
@@ -155,7 +155,7 @@
         android:layout_width="20dp"
         android:layout_height="25dp"
         android:layout_marginTop="348dp"
-        android:layout_marginRight="-330dp"
+        android:layout_marginRight="-300dp"
         android:background="@drawable/baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -195,7 +195,7 @@
         android:layout_width="20dp"
         android:layout_height="25dp"
         android:layout_marginTop="408dp"
-        android:layout_marginRight="-330dp"
+        android:layout_marginRight="-300dp"
         android:background="@drawable/baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -235,7 +235,7 @@
         android:layout_width="20dp"
         android:layout_height="25dp"
         android:layout_marginTop="468dp"
-        android:layout_marginRight="-330dp"
+        android:layout_marginRight="-300dp"
         android:background="@drawable/baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"

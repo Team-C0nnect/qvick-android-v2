@@ -17,17 +17,16 @@ class TermsOfUseActivity : AppCompatActivity() {
 
         // 전체동의 체크박스
         binding.fullAgreementCB.setOnClickListener{
-            binding.fullAgreementCB.setOnClickListener {
-                if (!binding.termsOfServiceCB.isChecked) {
-                    binding.termsOfServiceCB.isChecked = true
-                }
-                if (!binding.PrivacyCB.isChecked) {
-                    binding.PrivacyCB.isChecked = true
-                }
-                if (!binding.PrivacyCB2.isChecked) {
-                    binding.PrivacyCB2.isChecked = true
-                }
+            if (!binding.termsOfServiceCB.isChecked) {
+                binding.termsOfServiceCB.isChecked = true
             }
+            if (!binding.PrivacyCB.isChecked) {
+                binding.PrivacyCB.isChecked = true
+            }
+            if (!binding.PrivacyCB2.isChecked) {
+                binding.PrivacyCB2.isChecked = true
+            }
+
         }
 
 
