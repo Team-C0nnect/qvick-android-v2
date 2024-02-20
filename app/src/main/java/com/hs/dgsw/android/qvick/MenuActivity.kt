@@ -20,10 +20,10 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
         // 외출/외박 화면으로 이동
-        binding.goOutingBtn.setOnClickListener {
-            intent = Intent(this, OutingMainActivity::class.java)
-            startActivity(intent)
-        }
+//        binding.goOutingBtn.setOnClickListener {
+//            intent = Intent(this, OutingMainActivity::class.java)
+//            startActivity(intent)
+//        }
         // 개인정보 이용약관 뷰로 이동
         binding.goPrivacyBtn.setOnClickListener {
             intent = Intent(this, PrivacyTermsActivity::class.java)
