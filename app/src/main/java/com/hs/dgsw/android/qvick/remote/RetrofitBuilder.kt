@@ -4,6 +4,7 @@ import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.hs.dgsw.android.qvick.remote.interceptor.TokenInterceptor
+import com.hs.dgsw.android.qvick.remote.service.AttendanceService
 import com.hs.dgsw.android.qvick.remote.service.LoginService
 import com.hs.dgsw.android.qvick.remote.service.PrivacyTermsService
 import com.hs.dgsw.android.qvick.remote.service.RoomService
@@ -35,6 +36,7 @@ class RetrofitBuilder {
         private var roomService: RoomService? = null
         private var useTermsService: UseTermsService? = null
         private var privacyTermsService: PrivacyTermsService? = null
+        private var attendanceService: AttendanceService? = null
 
         @Synchronized
         fun getGson(): Gson? {
@@ -175,6 +177,14 @@ class RetrofitBuilder {
                 privacyTermsService = getRetrofit().create(PrivacyTermsService::class.java)
             }
             return privacyTermsService!!
+        }
+
+        @Synchronized
+        fun getAttendanceRequestService(): AttendanceService{
+            if (attendanceService == null) {
+                attendanceService = getRetrofit().create(AttendanceService::class.java)
+            }
+            return attendanceService!!
         }
 
         @Synchronized

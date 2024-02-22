@@ -8,15 +8,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.OptIn
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraControl
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ExperimentalGetImage
+import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.mlkit.vision.barcode.BarcodeScanner
+import com.google.mlkit.vision.barcode.BarcodeScannerOptions
+import com.google.mlkit.vision.barcode.BarcodeScanning
+import com.google.mlkit.vision.barcode.common.Barcode
+import com.google.mlkit.vision.common.InputImage
 import com.hs.dgsw.android.qvick.databinding.FragmentBottomSheetBinding
+import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.remote.request.AttendanceRequest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.util.concurrent.Executor
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
@@ -30,6 +47,14 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     private var cameraController: CameraControl? = null
     private lateinit var mBinding: FragmentBottomSheetBinding
 
+    private val barcodeScanner: BarcodeScanner by lazy {
+        val option = BarcodeScannerOptions.Builder()
+            .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
+            .build()
+
+        BarcodeScanning.getClient(option)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,13 +67,11 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         // x버튼 구현
         mBinding.backBtn.setOnClickListener {
             dismiss()
         }
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,6 +115,50 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         requireContext(), android.Manifest.permission.CAMERA
     ) == PackageManager.PERMISSION_GRANTED
 
+
+    @OptIn(ExperimentalGetImage::class) private fun processBarcode(image: ImageProxy) {
+        // ImageProxy에서 이미지 데이터 및 메타데이터 가져오기
+        val mediaImage = image.image
+        val rotationDegrees = image.imageInfo.rotationDegrees
+
+        // 이미지를 InputImage로 변환
+        val inputImage = InputImage.fromMediaImage(mediaImage!!, rotationDegrees)
+
+        // 바코드 스캔
+        barcodeScanner.process(inputImage)
+            .addOnSuccessListener { barcodes ->
+                for (barcode in barcodes) {
+                    val qrCodeValue = barcode.displayValue ?: ""
+                    Log.d(TAG, "QR 코드 스캔 결과: $qrCodeValue")
+
+                    // 여기서 qrCodeValue를 필요한 곳에 전달하거나 저장할 수 있습니다.
+
+                    lifecycleScope.launch(Dispatchers.IO){
+                        kotlin.runCatching {
+                            RetrofitBuilder.getAttendanceRequestService().postAttendance(
+                                body = AttendanceRequest(
+                                    code = qrCodeValue
+                                )
+                            )
+                        }.onSuccess {
+                            Log.d(TAG, "성공 ㅇㅇㅇㅇㅇㅇ: $it")
+                        }.onFailure {
+                            Log.d(TAG, "실패: $it")
+                        }
+                    }
+
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e(TAG, "QR 코드 스캔 실패: ${e.message}", e)
+            }
+            .addOnCompleteListener {
+                // 이미지 처리가 완료된 후에는 ImageProxy를 닫아줘야 함
+                image.close()
+            }
+    }
+
+
     private fun startCamera(){
         Log.d(TAG, "startCamera: startCamera")
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
@@ -111,6 +178,19 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
                 cameraController = camera!!.cameraControl
                 cameraController!!.setZoomRatio(1F) // 1x Zoom
+
+                val imageAnalysis = ImageAnalysis.Builder()
+                    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                    .build()
+
+                imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(requireContext())) {image ->
+                    processBarcode(image)
+                    image.close()
+                }
+
+                cameraProvider.bindToLifecycle(
+                    this, cameraSelector, preview, imageAnalysis
+                )
             } catch (exc: Exception) {
                 println("에러 $exc")
             }
