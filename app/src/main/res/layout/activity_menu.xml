@@ -49,36 +49,36 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="35dp"
-        android:layout_height="24dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:text="알림"
-        android:textColor="@color/white"
-        android:textSize="17dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginRight="280dp"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="35dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="알림"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="17dp"-->
+<!--        android:layout_marginTop="260dp"-->
+<!--        android:layout_marginRight="280dp"-->
+<!--        />-->
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/mySwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="250dp"
-        android:layout_marginLeft="260dp"
-        android:checked="true"
-        android:thumb="@drawable/switch_track_thumb"
-        app:track="@drawable/switch_track_selector"
-        app:thumbTextPadding="24dp"
-        app:switchMinWidth="0dp"
-        android:textOff=""
-        android:textOn="" />
+<!--    <androidx.appcompat.widget.SwitchCompat-->
+<!--        android:id="@+id/mySwitch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="250dp"-->
+<!--        android:layout_marginLeft="260dp"-->
+<!--        android:checked="true"-->
+<!--        android:thumb="@drawable/switch_track_thumb"-->
+<!--        app:track="@drawable/switch_track_selector"-->
+<!--        app:thumbTextPadding="24dp"-->
+<!--        app:switchMinWidth="0dp"-->
+<!--        android:textOff=""-->
+<!--        android:textOn="" />-->
 
 
 <!--    <androidx.appcompat.widget.AppCompatButton-->
@@ -108,7 +108,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="300dp"
         android:layout_marginRight="230dp"/>
 
 

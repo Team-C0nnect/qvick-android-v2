@@ -1,6 +1,7 @@
 package com.hs.dgsw.android.qvick
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hs.dgsw.android.qvick.databinding.ActivityMenuBinding
@@ -10,6 +11,9 @@ class MenuActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMenuBinding.inflate(layoutInflater)
     }
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -35,6 +39,8 @@ class MenuActivity : AppCompatActivity() {
             intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
+
+
 
     }
 }
