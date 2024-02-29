@@ -20,5 +20,4 @@ interface FcmTokenDao {
 
     @Delete
     fun deleteMember(entity: FcmTokenEntity)
-
 }

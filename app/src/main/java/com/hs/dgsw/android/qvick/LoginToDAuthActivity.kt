@@ -1,9 +1,11 @@
 package com.hs.dgsw.android.qvick
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -40,6 +42,11 @@ class LoginToDAuthActivity : AppCompatActivity() {
                 }
 
                 val token = task.result
+
+//
+//                val msg = getString(R.string.msg_token_fmt, token)
+//                Log.d(TAG, msg)
+//                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             })
             try {
                 val account = task.getResult(ApiException::class.java)
@@ -53,6 +60,7 @@ class LoginToDAuthActivity : AppCompatActivity() {
                     runBlocking {
                         fcmToken = QvickDataBase.getInstance(applicationContext)?.fcmTokenDao()?.getMembers()?.fcmToken.toString()
                     }
+                    Log.d(TAG, "있나?: $fcmToken")
 
                     RetrofitBuilder.getLoginService().login(
                         LoginRequest(
@@ -94,7 +102,7 @@ class LoginToDAuthActivity : AppCompatActivity() {
 
     private fun getGoogleClient():GoogleSignInClient {
         val googleSignInOption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("246755219900-ubbuhsmojfign0du3pulukfi6a3843fv.apps.googleusercontent.com")
+            .requestIdToken("246755219900-sovfq7ee6o64n06hga1evp77jb7vkl2a.apps.googleusercontent.com")
             .requestEmail()
             .build()
         return GoogleSignIn.getClient(this, googleSignInOption)
@@ -125,5 +133,3 @@ class LoginToDAuthActivity : AppCompatActivity() {
         }
     }
 }
-
-

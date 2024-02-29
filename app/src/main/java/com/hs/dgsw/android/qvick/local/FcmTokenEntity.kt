@@ -5,10 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "fcm_token_table")
-data class FcmTokenEntity(
+data class FcmTokenEntity (
     @PrimaryKey
-    val id: Int = 0,  // idToken
+    val id: Int = 0,
 
     @ColumnInfo(name = "fcmToken")
-    val fcmToken: String  // fcmToken
+    val fcmToken: String
 )
