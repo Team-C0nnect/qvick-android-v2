@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -18,6 +17,7 @@ import com.hs.dgsw.android.qvick.databinding.ActivityLoginToDauthBinding
 import com.hs.dgsw.android.qvick.local.QvickDataBase
 import com.hs.dgsw.android.qvick.local.TokenEntity
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.remote.Utils
 import com.hs.dgsw.android.qvick.remote.request.LoginRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,7 +43,7 @@ class LoginToDAuthActivity : AppCompatActivity() {
 
                 val token = task.result
 
-//
+
 //                val msg = getString(R.string.msg_token_fmt, token)
 //                Log.d(TAG, msg)
 //                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
@@ -68,6 +68,10 @@ class LoginToDAuthActivity : AppCompatActivity() {
                             fcmToken = fcmToken
                         )
                     ).let { result ->
+
+                        Utils.setAccessToken(result.accessToken)
+                        Utils.setRefreshToken(result.refreshToken)
+
 
                         QvickDataBase.getInstance(applicationContext)?.tokenDao()?.insertMember(
                             TokenEntity(
@@ -97,6 +101,8 @@ class LoginToDAuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initButton()
+
+        Utils.init(this)
     }
 
 

@@ -82,11 +82,9 @@ class EditProfileActivity : AppCompatActivity() {
                     }
                 }
 
-
                 intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
             }
-
         }
 
         // 이전 버튼
@@ -119,6 +117,21 @@ class EditProfileActivity : AppCompatActivity() {
                     1000
                 )
             }
+        }
+
+        fetchStudentData()
+    }
+
+    private fun fetchStudentData(){
+        // 학번 불러오기
+        lifecycleScope.launch(Dispatchers.IO){
+            val call = RetrofitBuilder.getStudentService().getStudent()
+            binding.studentIDEditText.setText(call.stdId)
+        }
+        // 기숙사 호실 불러오기
+        lifecycleScope.launch(Dispatchers.IO){
+            val call = RetrofitBuilder.getRoomService().getRoom()
+            binding.roomNumberEditText.setText(call.roomID)
         }
     }
 

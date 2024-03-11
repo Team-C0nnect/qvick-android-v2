@@ -1,7 +1,9 @@
 package com.hs.dgsw.android.qvick.remote.service
 
 import com.hs.dgsw.android.qvick.remote.request.RoomRequest
+import com.hs.dgsw.android.qvick.remote.response.RoomResponse
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 
@@ -15,4 +17,9 @@ interface RoomService {
     suspend fun putRoom(
         @Body body: RoomRequest
     )
+
+    @GET("/room")
+    suspend fun getRoom(
+
+    ): RoomResponse
 }
