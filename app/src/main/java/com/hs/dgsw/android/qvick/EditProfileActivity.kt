@@ -119,21 +119,21 @@ class EditProfileActivity : AppCompatActivity() {
             }
         }
 
-        fetchStudentData()
+//        fetchStudentData()
     }
 
-    private fun fetchStudentData(){
-        // 학번 불러오기
-        lifecycleScope.launch(Dispatchers.IO){
-            val call = RetrofitBuilder.getStudentService().getStudent()
-            binding.studentIDEditText.setText(call.stdId)
-        }
-        // 기숙사 호실 불러오기
-        lifecycleScope.launch(Dispatchers.IO){
-            val call = RetrofitBuilder.getRoomService().getRoom()
-            binding.roomNumberEditText.setText(call.roomID)
-        }
-    }
+//    private fun fetchStudentData(){
+//        // 학번 불러오기
+//        lifecycleScope.launch(Dispatchers.IO){
+//            val call = RetrofitBuilder.getStudentService().getStudent()
+//            binding.studentIDEditText.setText(call.stdId)
+//        }
+//        // 기숙사 호실 불러오기
+//        lifecycleScope.launch(Dispatchers.IO){
+//            val call = RetrofitBuilder.getRoomService().getRoom()
+//            binding.roomNumberEditText.setText(call.roomID)
+//        }
+//    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
