@@ -1,6 +1,5 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.outing
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment

@@ -1,9 +1,11 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.privacy
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hs.dgsw.android.qvick.databinding.ActivityPrivacyTermsBinding
+import com.hs.dgsw.android.qvick.home.HomeActivity
+import com.hs.dgsw.android.qvick.menu.MenuActivity
 
 class PrivacyTermsActivity : AppCompatActivity() {
 

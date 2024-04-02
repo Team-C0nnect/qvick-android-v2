@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.home
 
 import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
@@ -31,9 +31,6 @@ import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.remote.request.AttendanceRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.concurrent.Executor
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
 
 class BottomSheetFragment : BottomSheetDialogFragment() {

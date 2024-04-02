@@ -1,18 +1,18 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.student
 
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityStudentBinding
+import com.hs.dgsw.android.qvick.privacy.TermsOfUseActivity
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.remote.request.RoomRequest
 import com.hs.dgsw.android.qvick.remote.request.StudentRequest
-import com.hs.dgsw.android.qvick.remote.service.StudentService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

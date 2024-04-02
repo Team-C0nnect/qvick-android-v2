@@ -1,33 +1,30 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.privacy
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.hs.dgsw.android.qvick.databinding.FragmentServiceBottomSheetBinding
+import com.hs.dgsw.android.qvick.R
+import com.hs.dgsw.android.qvick.databinding.FragmentPrivacyBottomSheetBinding
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.math.log
 
 
-class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
+class PrivacyBottomSheetFragment : BottomSheetDialogFragment() {
 
-    private lateinit var mBinding: FragmentServiceBottomSheetBinding
-
+    private lateinit var mBinding: FragmentPrivacyBottomSheetBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mBinding = FragmentServiceBottomSheetBinding.inflate(inflater, container, false)
+        mBinding = FragmentPrivacyBottomSheetBinding.inflate(inflater, container, false)
         return mBinding.root
     }
 
@@ -37,16 +34,13 @@ class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
         // html text 불러오기
         lifecycleScope.launch(Dispatchers.IO){
             kotlin.runCatching {
-                RetrofitBuilder.getUseTermsService().getUseTerms()
-            }.onSuccess { response ->
+                RetrofitBuilder.getPrivacyTermsService().getPrivacyTerms()
+            }.onSuccess {response ->
                 Log.d(TAG, "onCreate: 성공!!")
+                val htmlDate = response.toString()
 
-                val htmlData = response.toString() // HTML 데이터
-
-                var serviceText = view.findViewById<TextView>(R.id.serviceText)
-                serviceText.text = htmlData
-
-
+                var privacyText = view.findViewById<TextView>(R.id.privacyText)
+                privacyText.text = htmlDate
             }.onFailure {
                 Log.d(TAG, "onCreate: 실패")
             }

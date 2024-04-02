@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".BottomSheetFragment"
+    tools:context=".home.BottomSheetFragment"
     android:padding="20dp">
 
 <!--    카메라 뷰로 변경 해야함-->

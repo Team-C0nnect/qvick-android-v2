@@ -1,14 +1,10 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.profile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
+import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityProfileBinding
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import javax.security.auth.callback.Callback
 
 class ProfileActivity : AppCompatActivity() {
 

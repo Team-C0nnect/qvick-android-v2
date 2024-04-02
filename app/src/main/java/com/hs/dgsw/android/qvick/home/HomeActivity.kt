@@ -1,9 +1,9 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

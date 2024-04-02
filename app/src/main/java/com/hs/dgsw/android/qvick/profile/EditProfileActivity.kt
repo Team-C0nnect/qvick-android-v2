@@ -1,8 +1,7 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.profile
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.PackageManager

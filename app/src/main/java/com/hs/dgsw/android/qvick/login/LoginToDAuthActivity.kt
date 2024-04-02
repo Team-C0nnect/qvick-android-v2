@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.login
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -13,6 +13,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
+import com.hs.dgsw.android.qvick.main.MainActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityLoginToDauthBinding
 import com.hs.dgsw.android.qvick.local.QvickDataBase
 import com.hs.dgsw.android.qvick.local.TokenEntity

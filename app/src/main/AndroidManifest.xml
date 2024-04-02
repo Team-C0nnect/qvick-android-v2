@@ -31,36 +31,36 @@
         tools:targetApi="31" >
 
         <activity
-            android:name=".MenuActivity"
+            android:name=".menu.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".profile.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".OutingMainActivity"
+            android:name=".outing.OutingMainActivity"
             android:exported="false" />
         <activity
-            android:name=".SleepoverActivity"
+            android:name=".outing.SleepoverActivity"
             android:exported="false" />
         <activity
-            android:name=".OutingActivity"
+            android:name=".outing.OutingActivity"
             android:exported="false" />
         <activity
-            android:name=".PrivacyTermsActivity"
+            android:name=".privacy.PrivacyTermsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".home.HomeActivity"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".StudentIdActivity"
+            android:name=".student.StudentIdActivity"
             android:exported="true" />
         <activity
-            android:name=".TermsOfUseActivity"
+            android:name=".privacy.TermsOfUseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,20 +69,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginToDAuthActivity"
+            android:name=".login.LoginToDAuthActivity"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".SchoolSelectionActivity"
+            android:name=".school.SchoolSelectionActivity"
             android:exported="false" >
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="false" />
 
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name=".login.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>

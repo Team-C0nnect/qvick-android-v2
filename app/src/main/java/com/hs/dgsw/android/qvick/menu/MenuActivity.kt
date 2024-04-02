@@ -1,10 +1,13 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.menu
 
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hs.dgsw.android.qvick.privacy.PrivacyTermsActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityMenuBinding
+import com.hs.dgsw.android.qvick.home.HomeActivity
+import com.hs.dgsw.android.qvick.profile.ProfileActivity
 
 class MenuActivity : AppCompatActivity() {
 

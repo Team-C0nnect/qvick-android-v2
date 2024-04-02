@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.login
 
 import  android.app.NotificationChannel
 import android.app.NotificationManager
@@ -11,8 +11,10 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.local.FcmTokenEntity
 import com.hs.dgsw.android.qvick.local.QvickDataBase
+import com.hs.dgsw.android.qvick.main.MainActivity
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 

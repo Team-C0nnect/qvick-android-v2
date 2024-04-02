@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.main
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityMainBinding
+import com.hs.dgsw.android.qvick.privacy.TermsOfUseActivity
 import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

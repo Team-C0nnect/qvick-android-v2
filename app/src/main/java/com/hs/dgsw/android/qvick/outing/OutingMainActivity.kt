@@ -1,10 +1,11 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.outing
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.databinding.ActivityOutingMainBinding
 
 class OutingMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {

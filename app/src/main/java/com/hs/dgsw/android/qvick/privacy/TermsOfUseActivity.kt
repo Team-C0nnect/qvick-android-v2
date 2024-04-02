@@ -1,9 +1,11 @@
-package com.hs.dgsw.android.qvick
+package com.hs.dgsw.android.qvick.privacy
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.hs.dgsw.android.qvick.login.LoginToDAuthActivity
+import com.hs.dgsw.android.qvick.student.StudentIdActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityTermsOfUseBinding
 
 class TermsOfUseActivity : AppCompatActivity() {
