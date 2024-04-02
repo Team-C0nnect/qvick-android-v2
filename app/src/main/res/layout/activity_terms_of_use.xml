@@ -163,7 +163,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/PrivacyCB"
+        android:id="@+id/privacyCB"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:button="@color/white"

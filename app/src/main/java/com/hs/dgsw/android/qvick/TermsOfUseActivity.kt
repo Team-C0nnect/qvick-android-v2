@@ -15,18 +15,6 @@ class TermsOfUseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // 전체동의 체크박스
-        binding.fullAgreementCB.setOnClickListener{
-            if (!binding.termsOfServiceCB.isChecked) {
-                binding.termsOfServiceCB.isChecked = true
-            }
-            if (!binding.PrivacyCB.isChecked) {
-                binding.PrivacyCB.isChecked = true
-            }
-
-        }
-
-
         binding.termsOfServiceBtn.setOnClickListener {
             val serviceBottomSheetFragment = ServiceBottomSheetFragment()
             serviceBottomSheetFragment.show(supportFragmentManager, serviceBottomSheetFragment.tag)
@@ -36,7 +24,7 @@ class TermsOfUseActivity : AppCompatActivity() {
         // 학번/기숙사 호실 입력 화면으로 이동
         binding.nextPageBtn.setOnClickListener {
             if (binding.termsOfServiceCB.isChecked &&
-                binding.PrivacyCB.isChecked){
+                binding.privacyCB.isChecked){
 
                 intent = Intent(this, StudentIdActivity::class.java)
                 startActivity(intent)
@@ -49,5 +37,35 @@ class TermsOfUseActivity : AppCompatActivity() {
             intent = Intent(this, LoginToDAuthActivity::class.java)
             startActivity(intent)
         }
+
+        // 전체동의 체크박스
+        binding.fullAgreementCB.setOnClickListener {
+            val isChecked = binding.fullAgreementCB.isChecked
+            // 이용 약관 동의 체크박스와 개인정보 처리방침 동의 체크박스의 상태를 변경
+            binding.termsOfServiceCB.isChecked = isChecked
+            binding.privacyCB.isChecked = isChecked
+        }
+
+        binding.termsOfServiceCB.setOnClickListener {
+            val termsOfServiceIsChecked = binding.termsOfServiceCB.isChecked
+            val privacyIsChecked = binding.privacyCB.isChecked
+            if (termsOfServiceIsChecked == true && privacyIsChecked == true){
+                binding.fullAgreementCB.isChecked = true
+            } else{
+                binding.fullAgreementCB.isChecked = false
+            }
+        }
+
+        binding.privacyCB.setOnClickListener {
+            val termsOfServiceIsChecked = binding.termsOfServiceCB.isChecked
+            val privacyIsChecked = binding.privacyCB.isChecked
+            if (termsOfServiceIsChecked == true && privacyIsChecked == true){
+                binding.fullAgreementCB.isChecked = true
+            } else{
+                binding.fullAgreementCB.isChecked = false
+            }
+        }
+
+
     }
 }
