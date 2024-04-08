@@ -62,16 +62,18 @@
         <activity
             android:name=".privacy.TermsOfUseActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
         <activity
             android:name=".login.LoginToDAuthActivity"
             android:exported="false">
-
         </activity>
         <activity
             android:name=".school.SchoolSelectionActivity"
