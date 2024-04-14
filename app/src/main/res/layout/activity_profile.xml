@@ -50,16 +50,6 @@
         android:textStyle="bold"
         android:textSize="18dp"/>
 
-    <ImageView
-        android:id="@+id/ivProfile"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="125dp"
-        android:background="@drawable/circle"
-        android:src="@drawable/baseline_account_circle_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:layout_width="24dp"
         android:layout_height="17dp"
