@@ -15,11 +15,11 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.hs.dgsw.android.qvick.main.MainActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityLoginToDauthBinding
-import com.hs.dgsw.android.qvick.local.QvickDataBase
-import com.hs.dgsw.android.qvick.local.TokenEntity
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
-import com.hs.dgsw.android.qvick.remote.Utils
-import com.hs.dgsw.android.qvick.remote.request.LoginRequest
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
+import com.hs.dgsw.android.qvick.service.local.TokenEntity
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.Utils
+import com.hs.dgsw.android.qvick.service.remote.request.LoginRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

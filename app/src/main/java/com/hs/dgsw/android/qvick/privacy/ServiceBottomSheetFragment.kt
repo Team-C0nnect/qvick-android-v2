@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.databinding.FragmentServiceBottomSheetBinding
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

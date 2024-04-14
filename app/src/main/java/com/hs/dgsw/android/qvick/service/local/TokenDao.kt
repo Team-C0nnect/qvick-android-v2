@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick.local
+package com.hs.dgsw.android.qvick.service.local
 
 import androidx.room.Dao
 import androidx.room.Delete

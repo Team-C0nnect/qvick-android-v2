@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick.remote.service
+package com.hs.dgsw.android.qvick.service.remote.service
 
 import retrofit2.Call
 import retrofit2.http.GET

@@ -1,16 +1,16 @@
-package com.hs.dgsw.android.qvick.remote
+package com.hs.dgsw.android.qvick.service.remote
 
 import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.hs.dgsw.android.qvick.remote.interceptor.TokenInterceptor
-import com.hs.dgsw.android.qvick.remote.service.AttendanceService
-import com.hs.dgsw.android.qvick.remote.service.LoginService
-import com.hs.dgsw.android.qvick.remote.service.PrivacyTermsService
-import com.hs.dgsw.android.qvick.remote.service.RoomService
-import com.hs.dgsw.android.qvick.remote.service.StudentService
-import com.hs.dgsw.android.qvick.remote.service.TokenService
-import com.hs.dgsw.android.qvick.remote.service.UseTermsService
+import com.hs.dgsw.android.qvick.service.remote.interceptor.TokenInterceptor
+import com.hs.dgsw.android.qvick.service.remote.service.AttendanceService
+import com.hs.dgsw.android.qvick.service.remote.service.LoginService
+import com.hs.dgsw.android.qvick.service.remote.service.PrivacyTermsService
+import com.hs.dgsw.android.qvick.service.remote.service.RoomService
+import com.hs.dgsw.android.qvick.service.remote.service.StudentService
+import com.hs.dgsw.android.qvick.service.remote.service.TokenService
+import com.hs.dgsw.android.qvick.service.remote.service.UseTermsService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -156,7 +156,7 @@ class RetrofitBuilder {
         }
 
         @Synchronized
-        fun getRoomService(): RoomService{
+        fun getRoomService(): RoomService {
             if (roomService == null) {
                 roomService = getRetrofit().create(RoomService::class.java)
             }
@@ -164,7 +164,7 @@ class RetrofitBuilder {
         }
 
         @Synchronized
-        fun getUseTermsService(): UseTermsService{
+        fun getUseTermsService(): UseTermsService {
             if (useTermsService == null) {
                 useTermsService = getRetrofit().create(UseTermsService::class.java)
             }
@@ -172,7 +172,7 @@ class RetrofitBuilder {
         }
 
         @Synchronized
-        fun getPrivacyTermsService(): PrivacyTermsService{
+        fun getPrivacyTermsService(): PrivacyTermsService {
             if (privacyTermsService == null) {
                 privacyTermsService = getRetrofit().create(PrivacyTermsService::class.java)
             }
@@ -180,7 +180,7 @@ class RetrofitBuilder {
         }
 
         @Synchronized
-        fun getAttendanceRequestService(): AttendanceService{
+        fun getAttendanceRequestService(): AttendanceService {
             if (attendanceService == null) {
                 attendanceService = getRetrofit().create(AttendanceService::class.java)
             }

@@ -10,9 +10,9 @@ import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityStudentBinding
 import com.hs.dgsw.android.qvick.privacy.TermsOfUseActivity
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
-import com.hs.dgsw.android.qvick.remote.request.RoomRequest
-import com.hs.dgsw.android.qvick.remote.request.StudentRequest
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.RoomRequest
+import com.hs.dgsw.android.qvick.service.remote.request.StudentRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

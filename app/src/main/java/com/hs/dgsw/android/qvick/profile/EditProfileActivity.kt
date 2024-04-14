@@ -14,9 +14,9 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.databinding.ActivityEditProfileBinding
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
-import com.hs.dgsw.android.qvick.remote.request.RoomRequest
-import com.hs.dgsw.android.qvick.remote.request.StudentRequest
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.RoomRequest
+import com.hs.dgsw.android.qvick.service.remote.request.StudentRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

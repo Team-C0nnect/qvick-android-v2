@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick.remote
+package com.hs.dgsw.android.qvick.service.remote
 
 import android.content.Context
 import android.content.SharedPreferences

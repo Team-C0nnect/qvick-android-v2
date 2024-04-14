@@ -1,9 +1,9 @@
-package com.hs.dgsw.android.qvick.remote.interceptor
+package com.hs.dgsw.android.qvick.service.remote.interceptor
 
-import com.hs.dgsw.android.qvick.local.QvickDataBase
-import com.hs.dgsw.android.qvick.local.TokenDao
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
-import com.hs.dgsw.android.qvick.remote.request.TokenRequest
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
+import com.hs.dgsw.android.qvick.service.local.TokenDao
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.TokenRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor

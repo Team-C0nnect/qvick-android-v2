@@ -1,7 +1,7 @@
-package com.hs.dgsw.android.qvick.remote.service
+package com.hs.dgsw.android.qvick.service.remote.service
 
-import com.hs.dgsw.android.qvick.remote.request.StudentRequest
-import com.hs.dgsw.android.qvick.remote.response.StudentResponse
+import com.hs.dgsw.android.qvick.service.remote.request.StudentRequest
+import com.hs.dgsw.android.qvick.service.remote.response.StudentResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

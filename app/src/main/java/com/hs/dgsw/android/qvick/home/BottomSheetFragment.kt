@@ -27,8 +27,8 @@ import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
 import com.hs.dgsw.android.qvick.databinding.FragmentBottomSheetBinding
-import com.hs.dgsw.android.qvick.remote.RetrofitBuilder
-import com.hs.dgsw.android.qvick.remote.request.AttendanceRequest
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.AttendanceRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

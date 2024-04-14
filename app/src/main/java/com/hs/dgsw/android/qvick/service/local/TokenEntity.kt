@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick.local
+package com.hs.dgsw.android.qvick.service.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
