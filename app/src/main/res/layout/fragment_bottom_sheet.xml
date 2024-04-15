@@ -23,6 +23,7 @@
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_variable"
         android:text="QR 코드를 인식하여 출석체크 해 주세요"
         android:textAlignment="center"
         android:textSize="15dp"
