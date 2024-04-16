@@ -26,7 +26,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/pretendard_variable"
-        android:text="프로필"
+        android:text="회원가입"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="25dp"
@@ -44,120 +44,178 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="50dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginRight="270dp"
-        android:src="@drawable/qvick"
+    
+    <TextView
+        android:layout_width="304dp"
+        android:layout_height="23dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
-
-    <TextView
-        android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginRight="280dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="40dp"
+        android:text="회원가입을 위해 정보를 입력해주세요."
         android:fontFamily="@font/pretendard_variable"
-        android:text="학번"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="22dp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="20dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="150dp"
         android:fontFamily="@font/pretendard_variable"
-        android:text="자신의 학번을 작성해주세요"
+        android:text="자신의 이름을 작성해주세요."
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="15dp"
+        android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginRight="300dp"
+        android:background="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/studentID"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/pretendard_variable"
-        android:hint="예 1111"
-        android:inputType="number"
-        android:textColorHint="@color/white"
-        android:layout_marginRight="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginRight="260dp"
-        android:fontFamily="@font/pretendard_variable"
-        android:text="기숙사"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="22dp"
+        android:id="@+id/nameEditText"
+        android:layout_width="330dp"
+        android:layout_height="38dp"
+        android:hint="ex): 박규민"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="15dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:paddingLeft="40dp"
+        android:fontFamily="@font/pretendard_variable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="240dp"
+        android:backgroundTint="@color/white"
+        android:paddingTop="5dp"
+        android:textColorHint="#D9D9D9"/>
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="20dp"
-        android:layout_marginTop="430dp"
-        android:layout_marginRight="90dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="150dp"
         android:fontFamily="@font/pretendard_variable"
-        android:text="자신의 기숙사 동호수를 작성해주세요"
+        android:text="자신의 학번을 작성해주세요."
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="15dp"
+        android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginRight="300dp"
+        android:background="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <EditText
-        android:id="@+id/dormitoryLake"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/white"
+        android:id="@+id/studentIdEditText"
+        android:layout_width="330dp"
+        android:layout_height="38dp"
+        android:hint="ex): 2210"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:paddingLeft="40dp"
         android:fontFamily="@font/pretendard_variable"
-        android:hint="예 408"
-        android:inputType="number"
-        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="340dp"
+        android:backgroundTint="@color/white"
+        android:paddingTop="5dp"
+        android:textColorHint="#D9D9D9"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="100dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="자신의 기숙사 호실을 작성해주세요."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginRight="300dp"
+        android:background="@drawable/room"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/roomNumberEditText"
+        android:layout_width="330dp"
+        android:layout_height="38dp"
+        android:hint="ex): 301호"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:paddingLeft="40dp"
+        android:fontFamily="@font/pretendard_variable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="440dp"
+        android:backgroundTint="@color/white"
+        android:paddingTop="5dp"
+        android:textColorHint="#D9D9D9"/>
+
+
+
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextPageBtn"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#41C982"
-        android:text="다음"
+        android:id="@+id/SignUpBtn"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#41C982"
+        android:fontFamily="@font/pretendard_variable"
+        android:layout_marginTop="550dp"
+        android:text="회원가입"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

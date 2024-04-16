@@ -59,7 +59,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/emailText"
+        android:id="@+id/emailEditText"
         android:layout_width="330dp"
         android:layout_height="38dp"
         android:hint="이메일을 입력해 주세요."
@@ -115,7 +115,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/passwordText"
+        android:id="@+id/passwordEditText"
         android:layout_width="330dp"
         android:layout_height="38dp"
         android:hint="비밀번호를 입력해 주세요."
@@ -169,7 +169,7 @@
             android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/SingUpBtn"
+            android:id="@+id/GoSignUpBtn"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginLeft="20dp"
