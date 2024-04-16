@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.SingUpBtn.setOnClickListener{
+        binding.GoSignUpBtn.setOnClickListener{
             intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }

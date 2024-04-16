@@ -121,7 +121,7 @@
         android:hint="비밀번호를 입력해 주세요."
         android:textStyle="bold"
         android:textSize="15dp"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
         android:textColor="@color/white"
         android:gravity="start"
         android:paddingLeft="40dp"
@@ -160,7 +160,7 @@
         android:layout_marginTop="500dp">
 
         <TextView
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="180dp"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="계정이 없으신가?"
