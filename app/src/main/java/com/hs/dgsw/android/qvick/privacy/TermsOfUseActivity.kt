@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.hs.dgsw.android.qvick.login.LoginToDAuthActivity
-import com.hs.dgsw.android.qvick.student.StudentIdActivity
+import com.hs.dgsw.android.qvick.login.LoginActivity
+import com.hs.dgsw.android.qvick.login.StudentIdActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityTermsOfUseBinding
 
 class TermsOfUseActivity : AppCompatActivity() {
@@ -36,7 +36,7 @@ class TermsOfUseActivity : AppCompatActivity() {
         }
         // 이전 버튼
         binding.backBtn.setOnClickListener {
-            intent = Intent(this, LoginToDAuthActivity::class.java)
+            intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".school.SchoolSelectionActivity"
+    android:background="#3A3F4A">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="86dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/qvick"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="20dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:textSize="17dp"
+        android:text="큐빅에 오신걸 환영합니다."
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+
+    <TextView
+        android:layout_width="56dp"
+        android:layout_height="23dp"
+        android:layout_marginRight="270dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="이메일"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="230dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginRight="300dp"
+        android:background="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="330dp"
+        android:layout_height="38dp"
+        android:hint="이메일을 입력해 주세요."
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:paddingLeft="40dp"
+        android:fontFamily="@font/pretendard_variable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="270dp"
+        android:backgroundTint="@color/white"
+        android:paddingTop="5dp"
+        android:textColorHint="@color/white"/>
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="23dp"
+        android:layout_marginRight="270dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="비밀번호"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="330dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginRight="300dp"
+        android:background="@drawable/rook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/showBtn"
+        android:layout_width="25dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="300dp"
+        android:background="@drawable/offeye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="330dp"
+        android:layout_height="38dp"
+        android:hint="비밀번호를 입력해 주세요."
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:inputType="textVisiblePassword"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:paddingLeft="40dp"
+        android:fontFamily="@font/pretendard_variable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="360dp"
+        android:backgroundTint="@color/white"
+        android:paddingTop="5dp"
+        android:textColorHint="@color/white"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/LogoInBtn"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#41C982"
+        android:fontFamily="@font/pretendard_variable"
+        android:layout_marginTop="430dp"
+        android:text="로그인"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="500dp">
+
+        <TextView
+            android:layout_marginLeft="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="계정이 없으신가?"
+            android:textStyle="bold"
+            android:fontFamily="@font/pretendard_variable"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/SingUpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="회원가입"
+            android:fontFamily="@font/pretendard_variable"
+            android:textStyle="bold"
+            android:textColor="#41C982"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="20dp"/>
+
+
+    </LinearLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/text1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="학교가 없어요"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:fontFamily="@font/pretendard_variable"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:layout_marginRight="70dp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/contactUsBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="문의하기"-->
+<!--        android:textStyle="bold"-->
+<!--        android:fontFamily="@font/pretendard_variable"-->
+<!--        android:textColor="#41C982"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_marginLeft="70dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:layout_marginBottom="20dp"/>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

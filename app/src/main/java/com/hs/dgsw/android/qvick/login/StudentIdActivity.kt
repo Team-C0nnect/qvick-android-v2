@@ -1,4 +1,4 @@
-package com.hs.dgsw.android.qvick.student
+package com.hs.dgsw.android.qvick.login
 
 import android.content.ContentValues.TAG
 import android.content.Intent
