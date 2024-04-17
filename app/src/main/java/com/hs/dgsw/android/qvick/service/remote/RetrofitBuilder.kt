@@ -119,8 +119,7 @@ class RetrofitBuilder {
         fun getRetrofit(): Retrofit {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl("http://3.36.60.179:8080")
-                    .client(getOhHttpClient())
+                    .baseUrl("http://13.125.244.155:8080")
                     .addConverterFactory(GsonConverterFactory.create(getGson()!!))
                     .build()
             }
@@ -131,8 +130,7 @@ class RetrofitBuilder {
         fun getTokenRetrofit(): Retrofit {
             if (tokenRetrofit == null) {
                 tokenRetrofit = Retrofit.Builder()
-                    .baseUrl("http://3.36.60.179:8080")
-                    .client(getTokenOhHttpClient())
+                    .baseUrl("http://13.125.244.155:8080")
                     .addConverterFactory(GsonConverterFactory.create(getGson()!!))
                     .build()
             }

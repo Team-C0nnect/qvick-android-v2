@@ -22,18 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        lifecycleScope.launch(Dispatchers.IO){
-            kotlin.runCatching {
-                RetrofitBuilder.getStudentService().getStudent()
-            }.onSuccess {
-                Log.d(TAG, "성공: $it")
-                val intent = Intent(applicationContext, HomeActivity::class.java)
-                startActivity(intent)
-            }.onFailure {
-                Log.d(TAG, "실패: $it")
-                val intent = Intent(applicationContext, TermsOfUseActivity::class.java)
-                startActivity(intent)
-            }
-        }
+
     }
 }

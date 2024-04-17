@@ -39,15 +39,6 @@
             android:name=".profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".outing.OutingMainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".outing.SleepoverActivity"
-            android:exported="false" />
-        <activity
-            android:name=".outing.OutingActivity"
-            android:exported="false" />
-        <activity
             android:name=".privacy.PrivacyTermsActivity"
             android:exported="false" />
         <activity
@@ -55,9 +46,13 @@
             android:exported="false"></activity>
         <activity
             android:name=".login.StudentIdActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".privacy.TermsOfUseActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,9 +60,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login.LoginActivity"
-            android:exported="false"></activity>
         <activity
             android:name=".school.SchoolSelectionActivity"
             android:exported="false"></activity>
