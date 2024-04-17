@@ -26,7 +26,7 @@ class TermsOfUseActivity : AppCompatActivity() {
         binding.nextPageBtn.setOnClickListener {
             if (binding.termsOfServiceCB.isChecked &&
                 binding.privacyCB.isChecked){
-                intent = Intent(this, HomeActivity::class.java)
+                intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }else{
                 Toast.makeText(applicationContext, "필수 항목을 모두 선택해 주세요", Toast.LENGTH_SHORT).show()

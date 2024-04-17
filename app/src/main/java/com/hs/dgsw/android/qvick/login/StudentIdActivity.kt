@@ -26,7 +26,7 @@ class StudentIdActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.SignUpBtn.setOnClickListener {
-            intent = Intent(this, LoginActivity::class.java)
+            intent = Intent(this, TermsOfUseActivity::class.java)
             startActivity(intent)
         }
 
