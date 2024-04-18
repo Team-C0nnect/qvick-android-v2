@@ -14,11 +14,10 @@
         android:layout_width="30dp"
         android:layout_height="35dp"
         android:layout_marginTop="48dp"
-        android:layout_marginRight="320dp"
+        android:layout_marginLeft="30dp"
         android:background="@drawable/baseline_arrow_back_ios_new_24"
         android:backgroundTint="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -36,11 +35,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="100dp"
         android:background="@color/white"
-        app:layout_constraintHorizontal_bias="0.49"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,47 +48,44 @@
     <TextView
         android:layout_width="304dp"
         android:layout_height="23dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="120dp"
-        android:layout_marginRight="40dp"
         android:text="회원가입을 위해 정보를 입력해주세요."
         android:fontFamily="@font/pretendard_variable"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textAlignment="center"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="31dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         />
 
     <TextView
         android:layout_width="102dp"
         android:layout_height="23dp"
-        android:layout_marginRight="240dp"
         android:fontFamily="@font/pretendard_variable"
         android:text="아이디(이메일)"
         android:textSize="17dp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:layout_marginTop="200dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="31dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginRight="300dp"
         android:background="@drawable/profile"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:hint="이메일을 입력해 주세요."
         android:textStyle="bold"
@@ -96,11 +93,13 @@
         android:inputType="textEmailAddress"
         android:textColor="@color/white"
         android:gravity="start"
-        android:paddingLeft="40dp"
         android:fontFamily="@font/pretendard_variable"
+        android:paddingLeft="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
         android:layout_marginTop="240dp"
         android:backgroundTint="@color/white"
         android:paddingTop="5dp"
@@ -109,25 +108,23 @@
     <TextView
         android:layout_width="60dp"
         android:layout_height="23dp"
-        android:layout_marginRight="270dp"
         android:fontFamily="@font/pretendard_variable"
         android:text="비밀번호"
         android:textSize="17dp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:layout_marginTop="300dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="31dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="340dp"
-        android:layout_marginRight="300dp"
         android:background="@drawable/rook"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="31dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -135,16 +132,15 @@
         android:id="@+id/showBtn"
         android:layout_width="25dp"
         android:layout_height="19dp"
-        android:layout_marginTop="340dp"
-        android:layout_marginLeft="300dp"
         android:background="@drawable/offeye"
+        android:layout_marginTop="340dp"
+        android:layout_marginRight="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/passwordEditText2"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:hint="비밀번호를 입력해 주세요."
         android:textStyle="bold"
@@ -154,10 +150,12 @@
         android:gravity="start"
         android:paddingLeft="40dp"
         android:fontFamily="@font/pretendard_variable"
+        android:layout_marginTop="340dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginLeft="31dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="340dp"
         android:backgroundTint="@color/white"
         android:paddingTop="5dp"
         android:textColorHint="@color/white"/>
@@ -172,18 +170,17 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:layout_marginTop="400dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="31dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="430dp"
-        android:layout_marginRight="300dp"
         android:background="@drawable/rook"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="31dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -191,16 +188,15 @@
         android:id="@+id/showBtn2"
         android:layout_width="25dp"
         android:layout_height="19dp"
-        android:layout_marginTop="430dp"
-        android:layout_marginLeft="300dp"
         android:background="@drawable/offeye"
+        android:layout_marginTop="430dp"
+        android:layout_marginRight="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:hint="비밀번호를 입력해 주세요."
         android:textStyle="bold"
@@ -210,10 +206,12 @@
         android:gravity="start"
         android:paddingLeft="40dp"
         android:fontFamily="@font/pretendard_variable"
+        android:layout_marginRight="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="430dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="430dp"
         android:backgroundTint="@color/white"
         android:paddingTop="5dp"
         android:textColorHint="@color/white"/>
@@ -222,7 +220,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/SignUpBtn"
-        android:layout_width="339dp"
+        android:layout_width="0dp"
         android:layout_height="54dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#41C982"
@@ -232,6 +230,8 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="18dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
