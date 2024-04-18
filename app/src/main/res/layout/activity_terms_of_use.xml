@@ -24,26 +24,26 @@
         />
 
     <View
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="100dp"
         android:background="@color/white"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="50dp"
         android:layout_height="27dp"
-        android:layout_marginTop="130dp"
+        app:tint="@color/white"
         android:src="@drawable/qvick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="37dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="270dp"
-        app:tint="@color/white" />
+        />
     
     <TextView
         android:layout_width="90dp"
@@ -53,12 +53,11 @@
         android:textColor="@color/white"
         android:textSize="22dp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="240dp"
+        android:textAlignment="textStart"
         android:layout_marginTop="170dp"
+        android:layout_marginLeft="37dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -67,22 +66,24 @@
         android:fontFamily="@font/pretendard_variable"
         android:text="필수항목 및 선택항목 약관에 동의해 주세요"
         android:textColor="@color/white"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textStyle="bold"
         android:textSize="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="37dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="210dp"/>
+        />
 
     <View
-        android:layout_width="340dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="252dp"
         android:background="@drawable/border"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
@@ -90,12 +91,11 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:button="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="290dp"
-        android:layout_marginTop="270dp"
         android:background="@drawable/circular_check_box"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="270dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
     <TextView
         android:layout_width="95dp"
@@ -105,12 +105,11 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="150dp"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="83dp"
         android:layout_marginTop="268dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <CheckBox
@@ -118,12 +117,11 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:button="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="300dp"
-        android:layout_marginTop="350dp"
         android:background="@drawable/circular_check_box"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="350dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -134,24 +132,22 @@
         android:textColor="@color/white"
         android:textSize="15dp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="100dp"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="91dp"
         android:layout_marginTop="348dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/termsOfServiceBtn"
         android:layout_width="20dp"
         android:layout_height="25dp"
-        android:layout_marginTop="348dp"
-        android:layout_marginRight="-300dp"
         android:background="@drawable/baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="348dp"
+        android:layout_marginRight="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
@@ -159,12 +155,11 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:button="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="300dp"
-        android:layout_marginTop="410dp"
         android:background="@drawable/circular_check_box"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="410dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -175,38 +170,43 @@
         android:textColor="@color/white"
         android:textSize="15dp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="58dp"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="91dp"
         android:layout_marginTop="408dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/PrivacyBtn"
         android:layout_width="20dp"
         android:layout_height="25dp"
-        android:layout_marginTop="408dp"
-        android:layout_marginRight="-300dp"
         android:background="@drawable/baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="408dp"
+        android:layout_marginRight="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextPageBtn"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#41C982"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#41C982"
         android:fontFamily="@font/pretendard_variable"
-        android:text="다음"
+        android:layout_marginTop="550dp"
+        android:text="완료"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
