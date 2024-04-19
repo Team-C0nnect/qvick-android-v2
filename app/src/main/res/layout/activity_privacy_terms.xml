@@ -12,13 +12,11 @@
         android:id="@+id/backBtn"
         android:layout_width="30dp"
         android:layout_height="35dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="320dp"
         android:background="@drawable/baseline_arrow_back_ios_new_24"
         android:backgroundTint="@color/white"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="42dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -37,12 +35,14 @@
 
     <View
         android:id="@+id/endLine"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="100dp"
         android:background="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 <!--    <ImageView-->

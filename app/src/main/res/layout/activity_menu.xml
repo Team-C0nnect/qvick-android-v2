@@ -8,35 +8,31 @@
     tools:context=".menu.MenuActivity">
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="40dp"
+        android:layout_width="76dp"
+        android:layout_height="39dp"
         android:src="@drawable/qvick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white"
         android:layout_marginTop="60dp"
-        android:layout_marginRight="250dp"
-        />
+        android:layout_marginLeft="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backBtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="300dp"
         android:background="@drawable/baseline_close_24"
         android:backgroundTint="@color/white"
+        android:layout_marginTop="60dp"
+       android:layout_marginRight="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goProfileBtn"
         android:layout_width="347dp"
         android:layout_height="106dp"
-        android:layout_marginTop="128dp"
         android:background="@drawable/border"
         android:fontFamily="@font/pretendard_variable"
         android:text="1118 윤세욱"
@@ -45,8 +41,11 @@
         android:textColor="@color/white"
         android:paddingLeft="15dp"
         android:paddingRight="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="128dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginLeft="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
 <!--    <TextView-->
@@ -106,11 +105,11 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="300dp"
-        android:layout_marginRight="230dp"/>
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
