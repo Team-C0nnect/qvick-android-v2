@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
             } else{
                 lifecycleScope.launch(Dispatchers.IO){
                     kotlin.runCatching {
-                        RetrofitBuilder.getLoginService().login(
+                        RetrofitBuilder.getLoginService().postLogin(
                              body = LoginRequest(
                                  email = user,
                                  password = pass

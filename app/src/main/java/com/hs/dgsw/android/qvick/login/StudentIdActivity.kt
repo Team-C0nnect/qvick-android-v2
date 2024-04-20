@@ -10,11 +10,14 @@ import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityStudentBinding
 import com.hs.dgsw.android.qvick.privacy.TermsOfUseActivity
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.service.remote.request.RoomRequest
+import com.hs.dgsw.android.qvick.service.remote.request.SignUpRequest
 import com.hs.dgsw.android.qvick.service.remote.request.StudentRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.jvm.internal.Intrinsics.Kotlin
 
 class StudentIdActivity : AppCompatActivity() {
 
@@ -26,8 +29,39 @@ class StudentIdActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.SignUpBtn.setOnClickListener {
-            intent = Intent(this, TermsOfUseActivity::class.java)
-            startActivity(intent)
+
+            val name = binding.nameEditText.text.toString()
+            val student = binding.studentIdEditText.text.toString()
+            val room = binding.roomNumberEditText.text.toString()
+
+            if (name == "" || student == "" || room == ""){
+                Toast.makeText(this, "회원정보를 전부 입력해주세요", Toast.LENGTH_SHORT).show()
+            } else{
+                lifecycleScope.launch(Dispatchers.IO){
+                    kotlin.runCatching {
+                        RetrofitBuilder.getSignUpService().postSignUp(
+                            body = SignUpRequest(
+                                // 받아야함
+                                name = name,
+                                email = "",
+                                password = "",
+                                stdId = student,
+                                room = room
+                            )
+                        )
+                    }.onSuccess {
+                        intent = Intent(applicationContext, TermsOfUseActivity::class.java)
+                        startActivity(intent)
+                    }.onFailure {
+                        Toast.makeText(this@StudentIdActivity, "회원가입에 실패했습니다", Toast.LENGTH_SHORT).show()
+                        intent = Intent(applicationContext, SignUpActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+
+
         }
 
 

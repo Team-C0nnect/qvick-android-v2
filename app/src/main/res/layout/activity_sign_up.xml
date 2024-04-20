@@ -139,7 +139,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/passwordEditText2"
+        android:id="@+id/passwordEditText"
         android:layout_width="0dp"
         android:layout_height="38dp"
         android:hint="비밀번호를 입력해 주세요."
@@ -195,7 +195,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/repasswordEditText"
         android:layout_width="0dp"
         android:layout_height="38dp"
         android:hint="비밀번호를 입력해 주세요."

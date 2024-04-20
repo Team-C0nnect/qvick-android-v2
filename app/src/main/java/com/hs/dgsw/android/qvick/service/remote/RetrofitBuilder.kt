@@ -8,6 +8,7 @@ import com.hs.dgsw.android.qvick.service.remote.service.AttendanceService
 import com.hs.dgsw.android.qvick.service.remote.service.LoginService
 import com.hs.dgsw.android.qvick.service.remote.service.PrivacyTermsService
 import com.hs.dgsw.android.qvick.service.remote.service.RoomService
+import com.hs.dgsw.android.qvick.service.remote.service.SignUpService
 import com.hs.dgsw.android.qvick.service.remote.service.StudentService
 import com.hs.dgsw.android.qvick.service.remote.service.TokenService
 import com.hs.dgsw.android.qvick.service.remote.service.UseTermsService
@@ -37,6 +38,7 @@ class RetrofitBuilder {
         private var useTermsService: UseTermsService? = null
         private var privacyTermsService: PrivacyTermsService? = null
         private var attendanceService: AttendanceService? = null
+        private var signUpService: SignUpService? = null
 
         @Synchronized
         fun getGson(): Gson? {
@@ -137,6 +139,13 @@ class RetrofitBuilder {
             return tokenRetrofit!!
         }
 
+        @Synchronized
+        fun getSignUpService(): SignUpService{
+            if (signUpService == null){
+                signUpService = getRetrofit().create(SignUpService::class.java)
+            }
+            return signUpService!!
+        }
         @Synchronized
         fun getLoginService(): LoginService {
             if (loginService == null) {

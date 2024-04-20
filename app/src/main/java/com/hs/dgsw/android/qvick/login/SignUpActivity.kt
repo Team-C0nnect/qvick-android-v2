@@ -2,6 +2,7 @@ package com.hs.dgsw.android.qvick.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,9 +20,22 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.SignUpBtn.setOnClickListener {
-            intent = Intent(this, StudentIdActivity::class.java)
-            startActivity(intent)
-        }
 
+            val email = binding.emailEditText.text.toString()
+            val pass = binding.passwordEditText.text.toString()
+            val repass = binding.repasswordEditText.text.toString()
+
+            if (email == "" || pass == "" || repass == ""){
+                Toast.makeText(this, "회원정보를 전부 입력해주세요", Toast.LENGTH_SHORT).show()
+            } else{
+                if (pass == repass){
+                    // email, pass를 디비에 저장
+                    intent = Intent(this, StudentIdActivity::class.java)
+                    startActivity(intent)
+                } else{
+                    Toast.makeText(this, "비밀번호가 일치하지 않습니.", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }
