@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.databinding.ActivityEditProfileBinding
 import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.StudentIdRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -55,8 +56,8 @@ class EditProfileActivity : AppCompatActivity() {
                 // 학번
                 lifecycleScope.launch(Dispatchers.IO) {
                     kotlin.runCatching {
-                        RetrofitBuilder.getStudentService().putStudent(
-                            body = StudentRequest(
+                        RetrofitBuilder.getStudentService().patchStudentId(
+                            body = StudentIdRequest(
                                 stdId = classNumberSave
                             )
                         )

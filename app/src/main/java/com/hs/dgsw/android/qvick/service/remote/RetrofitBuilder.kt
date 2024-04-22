@@ -7,12 +7,14 @@ import com.hs.dgsw.android.qvick.service.remote.service.AttendanceService
 import com.hs.dgsw.android.qvick.service.remote.service.LoginService
 import com.hs.dgsw.android.qvick.service.remote.service.PrivacyTermsService
 import com.hs.dgsw.android.qvick.service.remote.service.SignUpService
+import com.hs.dgsw.android.qvick.service.remote.service.StudentIdService
 import com.hs.dgsw.android.qvick.service.remote.service.TokenService
 import com.hs.dgsw.android.qvick.service.remote.service.UseTermsService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
 import javax.net.ssl.SSLContext
@@ -33,6 +35,7 @@ class RetrofitBuilder {
         private var privacyTermsService: PrivacyTermsService? = null
         private var attendanceService: AttendanceService? = null
         private var signUpService: SignUpService? = null
+        private var studentIdService: StudentIdService? = null
 
         @Synchronized
         fun getGson(): Gson? {
@@ -131,6 +134,14 @@ class RetrofitBuilder {
                     .build()
             }
             return tokenRetrofit!!
+        }
+
+        @Synchronized
+        fun getStudentService(): StudentIdService{
+            if (studentIdService == null){
+                studentIdService = getRetrofit().create(StudentIdService::class.java)
+            }
+            return studentIdService!!
         }
 
         @Synchronized
