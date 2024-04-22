@@ -1,22 +1,18 @@
 package com.hs.dgsw.android.qvick.service.remote
 
-import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.hs.dgsw.android.qvick.service.remote.interceptor.TokenInterceptor
 import com.hs.dgsw.android.qvick.service.remote.service.AttendanceService
 import com.hs.dgsw.android.qvick.service.remote.service.LoginService
 import com.hs.dgsw.android.qvick.service.remote.service.PrivacyTermsService
-import com.hs.dgsw.android.qvick.service.remote.service.RoomService
 import com.hs.dgsw.android.qvick.service.remote.service.SignUpService
-import com.hs.dgsw.android.qvick.service.remote.service.StudentService
 import com.hs.dgsw.android.qvick.service.remote.service.TokenService
 import com.hs.dgsw.android.qvick.service.remote.service.UseTermsService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
 import javax.net.ssl.SSLContext
@@ -33,8 +29,6 @@ class RetrofitBuilder {
         private var tokenRetrofit: Retrofit? = null
         private var loginService: LoginService? = null
         private var tokenService: TokenService? = null
-        private var studentService: StudentService? = null
-        private var roomService: RoomService? = null
         private var useTermsService: UseTermsService? = null
         private var privacyTermsService: PrivacyTermsService? = null
         private var attendanceService: AttendanceService? = null
@@ -154,21 +148,9 @@ class RetrofitBuilder {
             return loginService!!
         }
 
-        @Synchronized
-        fun getStudentService(): StudentService {
-            if (studentService == null) {
-                studentService = getRetrofit().create(StudentService::class.java)
-            }
-            return studentService!!
-        }
 
-        @Synchronized
-        fun getRoomService(): RoomService {
-            if (roomService == null) {
-                roomService = getRetrofit().create(RoomService::class.java)
-            }
-            return roomService!!
-        }
+
+
 
         @Synchronized
         fun getUseTermsService(): UseTermsService {

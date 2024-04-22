@@ -1,24 +1,16 @@
 package com.hs.dgsw.android.qvick.profile
 
-import android.app.Activity
-import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Color
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.databinding.ActivityEditProfileBinding
 import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
-import com.hs.dgsw.android.qvick.service.remote.request.RoomRequest
-import com.hs.dgsw.android.qvick.service.remote.request.StudentRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
