@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.databinding.ActivityEditProfileBinding
+import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.service.remote.request.RoomRequest
 import com.hs.dgsw.android.qvick.service.remote.request.StudentRequest
@@ -29,6 +31,24 @@ class EditProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        UserDataManager.init(this)
+
+        val name = UserDataManager.getName()
+        val stdId = UserDataManager.getStdId()
+        val room = UserDataManager.getRoom()
+        val application = UserDataManager.getApplication()
+
+        // 상태 값 변경
+        binding.nameEditText.setText(name)
+        binding.studentIDEditText.setText(stdId)
+        binding.roomNumberEditText.setText(room)
+        if (application == false){
+            binding.AttendanceEditText.setText("미출석")
+            binding.AttendanceEditText.setTextColor(Color.RED)
+        } else{
+            binding.AttendanceEditText.setText("출석")
+            binding.AttendanceEditText.setTextColor(Color.GREEN)
+        }
 
         // 프로필 화면으로 이동
         binding.finishBtn.setOnClickListener {

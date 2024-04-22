@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.hs.dgsw.android.qvick.privacy.PrivacyTermsActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityMenuBinding
 import com.hs.dgsw.android.qvick.home.HomeActivity
+import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.profile.ProfileActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -15,11 +16,15 @@ class MenuActivity : AppCompatActivity() {
         ActivityMenuBinding.inflate(layoutInflater)
     }
 
-    private lateinit var sharedPreferences: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        UserDataManager.init(this)
+
+        val stdId = UserDataManager.getStdId()
+        val name = UserDataManager.getName()
+
+        binding.goProfileBtn.text = stdId+name
 
         // 프로필 화면으로 이동
         binding.goProfileBtn.setOnClickListener {

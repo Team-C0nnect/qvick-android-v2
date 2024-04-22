@@ -22,11 +22,12 @@ class StudentIdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        UserDataManager.init(this)
 
         binding.SignUpBtn.setOnClickListener {
 
             /// email, pass값을 못 들고 옮
-            val email = UserDataManager.getUserId()
+            val email = UserDataManager.getEmail()
             val pass = UserDataManager.getPassword()
             val name = binding.nameEditText.text.toString()
             val student = binding.studentIdEditText.text.toString()
@@ -50,6 +51,8 @@ class StudentIdActivity : AppCompatActivity() {
                         )
                     }.onSuccess {
                         Log.d(TAG, "onCreate: 성공!!: $it")
+                        UserDataManager.setUserData(email, pass, name, room, student, false)
+
                         intent = Intent(applicationContext, TermsOfUseActivity::class.java)
                         startActivity(intent)
                     }.onFailure {

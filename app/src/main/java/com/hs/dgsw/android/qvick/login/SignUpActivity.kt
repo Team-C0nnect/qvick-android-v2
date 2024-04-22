@@ -16,6 +16,7 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        UserDataManager.init(this)
 
         binding.SignUpBtn.setOnClickListener {
 
@@ -28,7 +29,7 @@ class SignUpActivity : AppCompatActivity() {
             } else{
                 if (pass == repass){
                     // email, pass를 디비에 저장
-                    UserDataManager.setUserData(email, pass)
+                    UserDataManager.setUserData(email, pass, "", "", "", false)
                     Log.d(TAG, "onCreate: 성공!!: $it")
                     val intent = Intent(this, StudentIdActivity::class.java)
                     startActivity(intent)

@@ -1,10 +1,12 @@
 package com.hs.dgsw.android.qvick.profile
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityProfileBinding
+import com.hs.dgsw.android.qvick.login.UserDataManager
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -14,7 +16,24 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        UserDataManager.init(this)
 
+        val name = UserDataManager.getName()
+        val stdId = UserDataManager.getStdId()
+        val room = UserDataManager.getRoom()
+        val application = UserDataManager.getApplication()
+
+        // 상태 값 변경
+        binding.nameEditText.setText(name)
+        binding.studentIDEditText.setText(stdId)
+        binding.roomNumberEditText.setText(room)
+        if (application == false){
+            binding.AttendanceEditText.setText("미출석")
+            binding.AttendanceEditText.setTextColor(Color.RED)
+        } else{
+            binding.AttendanceEditText.setText("출석")
+            binding.AttendanceEditText.setTextColor(Color.GREEN)
+        }
 
         // 프로필 수정 화면으로 이동
         binding.editBtn.setOnClickListener {
