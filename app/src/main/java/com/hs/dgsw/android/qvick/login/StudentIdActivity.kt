@@ -59,6 +59,9 @@ class StudentIdActivity : AppCompatActivity() {
                         startActivity(intent)
                     }.onFailure {
                         Log.d(TAG, "onCreate: 실패 : $it")
+                        /**
+                         * 409:이미 존재하는 유저입니다.
+                         */
                         withContext(Dispatchers.IO){
                             Toast.makeText(this@StudentIdActivity, "회원가입에 실패했습니다", Toast.LENGTH_SHORT).show()
                         }
@@ -67,6 +70,11 @@ class StudentIdActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        binding.backBtn.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 }
