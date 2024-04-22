@@ -14,7 +14,7 @@ import com.google.firebase.messaging.RemoteMessage
 import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.service.local.FcmTokenEntity
 import com.hs.dgsw.android.qvick.service.local.QvickDataBase
-import com.hs.dgsw.android.qvick.main.MainActivity
+import com.hs.dgsw.android.qvick.main.StartActivity
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -126,7 +126,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
      */
     private fun sendNotification(messageBody: String) {
         val requestCode = 0
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, StartActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(
             this,
