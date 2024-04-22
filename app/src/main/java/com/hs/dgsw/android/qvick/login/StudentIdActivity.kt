@@ -13,6 +13,7 @@ import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.service.remote.request.SignUpRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class StudentIdActivity : AppCompatActivity() {
 
@@ -51,13 +52,16 @@ class StudentIdActivity : AppCompatActivity() {
                         )
                     }.onSuccess {
                         Log.d(TAG, "onCreate: 성공!!: $it")
+
                         UserDataManager.setUserData(email, pass, name, room, student, false)
 
                         intent = Intent(applicationContext, TermsOfUseActivity::class.java)
                         startActivity(intent)
                     }.onFailure {
                         Log.d(TAG, "onCreate: 실패 : $it")
-                        Toast.makeText(this@StudentIdActivity, "회원가입에 실패했습니다", Toast.LENGTH_SHORT).show()
+                        withContext(Dispatchers.IO){
+                            Toast.makeText(this@StudentIdActivity, "회원가입에 실패했습니다", Toast.LENGTH_SHORT).show()
+                        }
                         intent = Intent(applicationContext, SignUpActivity::class.java)
                         startActivity(intent)
                     }
