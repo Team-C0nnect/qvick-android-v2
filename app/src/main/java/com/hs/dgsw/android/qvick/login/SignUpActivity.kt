@@ -1,13 +1,11 @@
 package com.hs.dgsw.android.qvick.login
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -30,10 +28,12 @@ class SignUpActivity : AppCompatActivity() {
             } else{
                 if (pass == repass){
                     // email, pass를 디비에 저장
-                    intent = Intent(this, StudentIdActivity::class.java)
+                    UserDataManager.setUserData(email, pass)
+                    Log.d(TAG, "onCreate: 성공!!: $it")
+                    val intent = Intent(this, StudentIdActivity::class.java)
                     startActivity(intent)
                 } else{
-                    Toast.makeText(this, "비밀번호가 일치하지 않습니.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
                 }
             }
         }
