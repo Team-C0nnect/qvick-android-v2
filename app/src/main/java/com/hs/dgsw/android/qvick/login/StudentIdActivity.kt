@@ -53,7 +53,7 @@ class StudentIdActivity : AppCompatActivity() {
                     }.onSuccess {
                         Log.d(TAG, "onCreate: 성공!!: $it")
 
-                        UserDataManager.setUserData(email, pass, name, room, student, false)
+                        UserDataManager.setUserData(email, pass, name, room, student)
 
                         intent = Intent(applicationContext, TermsOfUseActivity::class.java)
                         startActivity(intent)

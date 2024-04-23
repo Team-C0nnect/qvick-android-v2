@@ -29,7 +29,7 @@ class SignUpActivity : AppCompatActivity() {
             } else{
                 if (pass == repass){
                     // email, pass를 디비에 저장
-                    UserDataManager.setUserData(email, pass, "", "", "", false)
+                    UserDataManager.setUserData(email, pass, "", "", "")
                     Log.d(TAG, "onCreate: 성공!!: $it")
                     val intent = Intent(this, StudentIdActivity::class.java)
                     startActivity(intent)

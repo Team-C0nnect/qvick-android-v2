@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.databinding.ActivityEditProfileBinding
+import com.hs.dgsw.android.qvick.login.UserDataApplication
 import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.service.remote.request.StudentIdRequest
@@ -25,11 +26,12 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         UserDataManager.init(this)
+        UserDataApplication.init(this)
 
         val name = UserDataManager.getName()
         val stdId = UserDataManager.getStdId()
         val room = UserDataManager.getRoom()
-        val application = UserDataManager.getApplication()
+        val application = UserDataApplication.getApplication()
 
         // 상태 값 변경
         binding.nameEditText.setText(name)
