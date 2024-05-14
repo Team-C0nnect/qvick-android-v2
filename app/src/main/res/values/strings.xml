@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Qvick_Android</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="web_client_id">246755219900-sovfq7ee6o64n06hga1evp77jb7vkl2a.apps.googleusercontent.com</string>
 </resources>

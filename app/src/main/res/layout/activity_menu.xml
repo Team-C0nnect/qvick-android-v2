@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A3F4A"
+    tools:context=".menu.MenuActivity">
+
+    <ImageView
+        android:layout_width="76dp"
+        android:layout_height="39dp"
+        android:src="@drawable/qvick"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/baseline_close_24"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="60dp"
+       android:layout_marginRight="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goProfileBtn"
+        android:layout_width="347dp"
+        android:layout_height="106dp"
+        android:background="@drawable/border"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="1118 윤세욱"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginLeft="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="35dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="알림"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="17dp"-->
+<!--        android:layout_marginTop="260dp"-->
+<!--        android:layout_marginRight="280dp"-->
+<!--        />-->
+
+<!--    <androidx.appcompat.widget.SwitchCompat-->
+<!--        android:id="@+id/mySwitch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="250dp"-->
+<!--        android:layout_marginLeft="260dp"-->
+<!--        android:checked="true"-->
+<!--        android:thumb="@drawable/switch_track_thumb"-->
+<!--        app:track="@drawable/switch_track_selector"-->
+<!--        app:thumbTextPadding="24dp"-->
+<!--        app:switchMinWidth="0dp"-->
+<!--        android:textOff=""-->
+<!--        android:textOn="" />-->
+
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/goOutingBtn"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:text="외박신청"-->
+<!--        android:background="#3A3F4A"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="18dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="360dp"-->
+<!--        android:layout_marginRight="260dp"/>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goPrivacyBtn"
+        android:layout_width="111dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="개인정보 약관"
+        android:background="#3A3F4A"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SchoolSelectionActivity"
+    tools:context=".school.SchoolSelectionActivity"
     android:background="#3A3F4A">
 
     <ImageView
@@ -57,6 +57,7 @@
                 android:background="@drawable/rounded_corner"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="15dp"
+                android:padding="5dp"
                 android:text="대구소프웨어마이스터고등학교"
                 android:textStyle="bold"
                 android:textSize="22dp"

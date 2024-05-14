@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!--    <solid android:color="#7EF192"/>-->
+    <!-- 테두리 설정 -->
+    <!--    <stroke android:width="3dp"-->
+    <!--        android:color="#C71616" />-->
+    <!-- 페딩 -->
+    <!--    <padding android:left="1dp"-->
+    <!--        android:top="1dp"-->
+    <!--        android:right="1dp"-->
+    <!--        android:bottom="1dp" />-->
+
+    <corners android:bottomRightRadius="2000dp"
+        android:bottomLeftRadius="2000dp"
+        android:topLeftRadius="2000dp"
+        android:topRightRadius="2000dp"/>
+</shape>
