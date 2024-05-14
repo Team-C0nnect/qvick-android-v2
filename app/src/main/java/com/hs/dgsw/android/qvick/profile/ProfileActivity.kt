@@ -37,12 +37,6 @@ class ProfileActivity : AppCompatActivity() {
             binding.AttendanceEditText.setTextColor(Color.GREEN)
         }
 
-        // 프로필 수정 화면으로 이동
-        binding.editBtn.setOnClickListener {
-            intent = Intent(this, EditProfileActivity::class.java)
-            startActivity(intent)
-        }
-
         // 이전 버튼
         binding.backBtn.setOnClickListener {
             intent = Intent(this, MenuActivity::class.java)

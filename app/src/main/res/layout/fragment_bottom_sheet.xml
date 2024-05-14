@@ -36,22 +36,29 @@
         />
     
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/frame"
         android:layout_marginTop="147dp"
-        android:layout_width="match_parent"
-        android:layout_height="268dp"
+        android:layout_width="0dp"
+        android:layout_height="290dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.camera.view.PreviewView
             android:id="@+id/viewFinder"
             android:layout_width="0dp"
-            android:layout_height="268dp"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_marginRight="52dp"
-            android:layout_marginLeft="52dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginBottom="13dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_weight="1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".school.SchoolSelectionActivity"
+    tools:context=".login.LoginActivity"
     android:background="#3A3F4A">
 
     <ImageView
@@ -52,7 +52,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="270dp"
         android:layout_marginLeft="31dp"
-        android:background="@drawable/profile"
+        android:background="@drawable/ic_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -97,7 +97,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="360dp"
         android:layout_marginLeft="31dp"
-        android:background="@drawable/rook"
+        android:background="@drawable/ic_rook"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -107,7 +107,7 @@
         android:layout_height="19dp"
         android:layout_marginTop="360dp"
         android:layout_marginRight="35dp"
-        android:background="@drawable/offeye"
+        android:background="@drawable/ic_offeye"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

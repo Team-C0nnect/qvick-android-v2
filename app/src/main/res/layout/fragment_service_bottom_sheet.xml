@@ -4,31 +4,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".privacy.ServiceBottomSheetFragment"
-    android:background="@color/white"
-    android:padding="20dp">
+    android:background="@color/white">
 
 
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="214dp"
-        android:layout_height="37dp"
-        android:fontFamily="@font/pretendard_variable"
-        android:text="서비스 이용약관"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        />
-
-    <TextView
+    <WebView
         android:id="@+id/serviceText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text=""
+        android:layout_height="500dp"
         android:layout_marginTop="40dp"
         android:textStyle="bold"
+        android:fontFamily="@font/pretendard_variable"
         android:textSize="19dp"/>
 
 
@@ -44,6 +31,7 @@
         android:textColor="@color/black"
         android:textSize="16dp"
         android:layout_marginLeft="250dp"
+        android:layout_marginRight="35dp"
         android:textStyle="bold" />
 
 </LinearLayout>

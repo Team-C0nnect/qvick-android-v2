@@ -5,7 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.hs.dgsw.android.qvick.databinding.ActivityStartBinding
+import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.login.LoginActivity
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
+import com.hs.dgsw.android.qvick.service.local.TokenDao
+import com.hs.dgsw.android.qvick.service.local.TokenEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class StartActivity : AppCompatActivity() {
 
@@ -17,15 +26,17 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        var handler = Handler()
-        handler.postDelayed({
-            var intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }, 1500)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        finish()
+        GlobalScope.launch(Dispatchers.IO) {
+            val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken
+            if (!accessToken.isNullOrEmpty()) {
+                delay(1500)
+                startActivity(Intent(this@StartActivity, HomeActivity::class.java))
+                finish() // 현재 액티비티 종료
+            } else {
+                delay(1500)
+                startActivity(Intent(this@StartActivity, LoginActivity::class.java))
+                finish() // 현재 액티비티 종료
+            }
+        }
     }
 }

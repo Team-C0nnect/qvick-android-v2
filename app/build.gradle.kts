@@ -80,9 +80,17 @@ dependencies {
     implementation("androidx.room:room-ktx:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
 
+    // datastore
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
 
-    // google login
-    implementation("com.google.android.gms:play-services-ads-base:22.6.0")
+
+//    // google login
+//    implementation("com.google.android.gms:play-services-ads-base:22.6.0")
+
+    // goon - string
+    implementation ("com.squareup.retrofit2:converter-scalars:2.1.0")
+
+
 
 
     // cameraX

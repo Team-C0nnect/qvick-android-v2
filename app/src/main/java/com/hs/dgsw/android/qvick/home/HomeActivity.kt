@@ -4,9 +4,14 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+<<<<<<< HEAD
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+=======
+import android.util.Log
+import androidx.appcompat.app.AppCompatDelegate
+>>>>>>> main
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityHomeBinding
@@ -23,12 +28,17 @@ class HomeActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         UserDataApplication.init(this)
+        UserDataManager.init(this)
 
         val application = UserDataApplication.getApplication()
+        val name = UserDataManager.getName()
+
 
         if (application == false  ){
             binding.checkText.setText("출석미완료")
@@ -37,6 +47,8 @@ class HomeActivity : AppCompatActivity() {
             binding.checkText.setText("출석완료")
             binding.checkText.setTextColor(Color.GREEN)
         }
+
+        Log.d("hometext", "${name}")
 
 
         lifecycleScope.launch(Dispatchers.IO){

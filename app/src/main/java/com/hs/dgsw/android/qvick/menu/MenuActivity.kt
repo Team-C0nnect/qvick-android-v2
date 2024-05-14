@@ -4,11 +4,17 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.privacy.PrivacyTermsActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityMenuBinding
 import com.hs.dgsw.android.qvick.home.HomeActivity
+import com.hs.dgsw.android.qvick.login.LoginActivity
 import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.profile.ProfileActivity
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
+import com.hs.dgsw.android.qvick.service.local.TokenEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity() {
 
@@ -48,7 +54,17 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // 로그아웃
+        binding.logoutBtn.setOnClickListener {
+            lifecycleScope.launch(Dispatchers.IO) {
 
+                QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.let { tokenEntity ->
+                    QvickDataBase.getInstance(applicationContext)?.tokenDao()?.deleteMember(tokenEntity)
+                }
+            }
 
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

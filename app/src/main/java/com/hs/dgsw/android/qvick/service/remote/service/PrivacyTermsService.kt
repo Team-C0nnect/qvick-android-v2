@@ -5,7 +5,5 @@ import retrofit2.http.GET
 
 interface PrivacyTermsService {
     @GET("/terms/privacy-policy")
-    suspend fun getPrivacyTerms(
-
-    ):Call<String>
+    suspend fun getPrivacyTerms():String
 }
