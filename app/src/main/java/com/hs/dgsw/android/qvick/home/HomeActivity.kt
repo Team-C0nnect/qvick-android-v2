@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         val application = UserDataApplication.getApplication()
         val name = UserDataManager.getName()
+        var checkedDate = ""
 
 
         if (application == false){
@@ -52,6 +53,7 @@ class HomeActivity : AppCompatActivity() {
                 UserDataApplication.setUserData(false)
             }
         }
+
 
         // 메뉴 화면으로 이동
         binding.settingBtn.setOnClickListener {
