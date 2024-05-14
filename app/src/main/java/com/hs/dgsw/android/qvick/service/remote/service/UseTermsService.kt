@@ -5,7 +5,5 @@ import retrofit2.http.GET
 
 interface UseTermsService {
     @GET("/terms/use-term")
-    suspend fun getUseTerms(
-
-    ):Call<String>
+    suspend fun getUseTerms():String
 }

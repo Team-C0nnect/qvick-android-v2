@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.webkit.WebView
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.hs.dgsw.android.qvick.R
@@ -33,22 +33,21 @@ class ServiceBottomSheetFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // html text 불러오기
-        lifecycleScope.launch(Dispatchers.IO){
+        lifecycleScope.launch(Dispatchers.Main) {
             kotlin.runCatching {
                 RetrofitBuilder.getUseTermsService().getUseTerms()
             }.onSuccess { response ->
-                Log.d(TAG, "onCreate: 성공!!")
+                val htmlData = response // 이미 문자열로 된 HTML 데이터
 
-                val htmlData = response.toString() // HTML 데이터
-
-                var serviceText = view.findViewById<TextView>(R.id.serviceText)
-                serviceText.text = htmlData
-
-
-            }.onFailure {
-                Log.d(TAG, "onCreate: 실패")
+                // WebView를 사용하여 HTML 표시
+                val webView = view.findViewById<WebView>(R.id.serviceText)
+                webView.loadDataWithBaseURL(null, htmlData, "text/html", "utf-8", null)
+            }.onFailure { exception ->
+                exception.printStackTrace()
+                Log.d(TAG, "onViewCreated: 실패")
             }
         }
+
 
         // 완료 버튼 구현
         mBinding.completeBtn.setOnClickListener {

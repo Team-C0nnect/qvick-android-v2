@@ -27,7 +27,6 @@ class StudentIdActivity : AppCompatActivity() {
 
         binding.SignUpBtn.setOnClickListener {
 
-            /// email, pass값을 못 들고 옮
             val email = UserDataManager.getEmail()
             val pass = UserDataManager.getPassword()
             val name = binding.nameEditText.text.toString()
@@ -42,7 +41,6 @@ class StudentIdActivity : AppCompatActivity() {
                     kotlin.runCatching {
                         RetrofitBuilder.getSignUpService().postSignUp(
                             body = SignUpRequest(
-                                // 받아야함
                                 name = name,
                                 email = email,
                                 password = pass,

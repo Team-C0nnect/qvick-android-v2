@@ -23,6 +23,11 @@ class TermsOfUseActivity : AppCompatActivity() {
             serviceBottomSheetFragment.show(supportFragmentManager, serviceBottomSheetFragment.tag)
         }
 
+        binding.PrivacyBtn.setOnClickListener {
+            val privacyBottomSheetFragment = PrivacyBottomSheetFragment()
+            privacyBottomSheetFragment.show(supportFragmentManager, privacyBottomSheetFragment.tag)
+        }
+
         binding.nextPageBtn.setOnClickListener {
             if (binding.termsOfServiceCB.isChecked &&
                 binding.privacyCB.isChecked){

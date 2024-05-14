@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -32,15 +33,16 @@ class PrivacyBottomSheetFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // html text 불러오기
-        lifecycleScope.launch(Dispatchers.IO){
+        lifecycleScope.launch(Dispatchers.Main){
             kotlin.runCatching {
                 RetrofitBuilder.getPrivacyTermsService().getPrivacyTerms()
             }.onSuccess {response ->
                 Log.d(TAG, "onCreate: 성공!!")
-                val htmlDate = response.toString()
+                val htmlDate = response
 
-                var privacyText = view.findViewById<TextView>(R.id.privacyText)
-                privacyText.text = htmlDate
+                val webView = view.findViewById<WebView>(R.id.privacyText) // webView의 ID를 사용하여 찾기
+                webView.loadDataWithBaseURL(null, htmlDate, "text/html", "utf-8", null)
+
             }.onFailure {
                 Log.d(TAG, "onCreate: 실패")
             }
