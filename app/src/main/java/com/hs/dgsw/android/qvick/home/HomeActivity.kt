@@ -4,6 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityHomeBinding
@@ -12,8 +15,10 @@ import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.concurrent.Executor
 
 class HomeActivity : AppCompatActivity() {
+
 
     private val binding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
@@ -25,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         val application = UserDataApplication.getApplication()
 
-        if (application == false){
+        if (application == false  ){
             binding.checkText.setText("출석미완료")
             binding.checkText.setTextColor(Color.RED)
         } else{
