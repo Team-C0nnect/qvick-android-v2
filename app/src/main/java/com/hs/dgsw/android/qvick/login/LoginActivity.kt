@@ -20,12 +20,18 @@ import kotlinx.coroutines.launch
 
 import java.util.concurrent.Executor
 import androidx.biometric.BiometricPrompt
+import androidx.core.graphics.drawable.toDrawable
+import com.hs.dgsw.android.qvick.R
 import kotlinx.coroutines.runBlocking
 
 class LoginActivity : AppCompatActivity() {
+    private var isVisible = false
 
     private val binding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
+    }
+    init {
+        isVisible = false
     }
 
 
@@ -44,6 +50,9 @@ class LoginActivity : AppCompatActivity() {
         binding.GoSignUpBtn.setOnClickListener {
             intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+        }
+        binding.showBtn.setOnClickListener {
+            changeShowBtn()
         }
 
         // 로그인
@@ -115,6 +124,24 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, HomeActivity::class.java)
             startActivity(intent)
             finish()
+        }
+    }
+    fun changeShowBtn(){
+        var lastIndex : Int = 0
+        if (binding.passwordEditText.text?.lastIndex != null){
+            lastIndex = binding.passwordEditText.text?.lastIndex!!+1
+        }
+
+        isVisible = if(isVisible){
+            binding.showBtn.setBackgroundResource(R.drawable.ic_oneye)
+            binding.passwordEditText.inputType = 0x00000081
+            binding.passwordEditText.setSelection(lastIndex)
+            false
+        } else{
+            binding.showBtn.setBackgroundResource(R.drawable.ic_offeye)
+            binding.passwordEditText.inputType = 0x00000091
+            binding.passwordEditText.setSelection(lastIndex)
+            true
         }
     }
 }
