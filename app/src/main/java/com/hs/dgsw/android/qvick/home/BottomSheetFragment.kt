@@ -127,7 +127,6 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         val inputImage = InputImage.fromMediaImage(mediaImage!!, rotationDegrees)
 
         // 바코드 스캔
-        if (bioCheck()){
             barcodeScanner.process(inputImage)
                 .addOnSuccessListener { barcodes ->
                     for (barcode in barcodes) {
@@ -135,23 +134,26 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                         Log.d(TAG, "QR 코드 스캔 결과: $qrCodeValue")
 
                         // 여기서 qrCodeValue를 필요한 곳에 전달하거나 저장할 수 있습니다.
-
-                        lifecycleScope.launch(Dispatchers.IO){
-                            kotlin.runCatching {
-                                RetrofitBuilder.getAttendanceRequestService().postAttendance(
-                                    body = AttendanceRequest(
-                                        code = qrCodeValue
+                        if (bioCheck()){
+                            lifecycleScope.launch(Dispatchers.IO){
+                                kotlin.runCatching {
+                                    RetrofitBuilder.getAttendanceRequestService().postAttendance(
+                                        body = AttendanceRequest(
+                                            code = qrCodeValue
+                                        )
                                     )
-                                )
-                            }.onSuccess {
-                                Log.d(TAG, "성공 ㅇㅇㅇㅇㅇㅇ: $it")
+                                }.onSuccess {
+                                    Log.d(TAG, "성공 ㅇㅇㅇㅇㅇㅇ: $it")
 
 
-                            }.onFailure {
-                                Log.d(TAG, "실패: $it")
+                                }.onFailure {
+                                    Log.d(TAG, "실패: $it")
+                                }
                             }
                         }
-
+                        else{
+                            Toast.makeText(requireContext(), "지문이 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
                 .addOnFailureListener { e ->
@@ -161,10 +163,6 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                     // 이미지 처리가 완료된 후에는 ImageProxy를 닫아줘야 함
                     image.close()
                 }
-        }
-        else{
-            Toast.makeText(requireContext(), "지문이 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
-        }
     }
 
 
@@ -230,8 +228,8 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                 }
             })
         promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("지문 인증")
-            .setSubtitle("기기에 등록된 지문을 이용하여 지문을 인증해주세요.")
+            .setTitle("지문 인증") // 맨 위에 나오는 텍스트
+            .setSubtitle("기기에 등록된 지문을 이용하여 지문을 인증해주세요.") // 서브 설명 텍스트
             .setNegativeButtonText("취소")
             .build()
         biometricPrompt.authenticate(promptInfo)

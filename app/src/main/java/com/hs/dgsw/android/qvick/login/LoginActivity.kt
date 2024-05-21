@@ -17,12 +17,10 @@ import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.service.remote.request.LoginRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-<<<<<<< HEAD
+
 import java.util.concurrent.Executor
 import androidx.biometric.BiometricPrompt
-=======
 import kotlinx.coroutines.runBlocking
->>>>>>> main
 
 class LoginActivity : AppCompatActivity() {
 
@@ -30,15 +28,13 @@ class LoginActivity : AppCompatActivity() {
         ActivityLoginBinding.inflate(layoutInflater)
     }
 
-<<<<<<< HEAD
-=======
+
 
     override fun onDestroy() {
         super.onDestroy()
         Log.d("test", "destroy")
     }
 
->>>>>>> main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

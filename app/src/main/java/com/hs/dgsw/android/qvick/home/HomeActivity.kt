@@ -4,14 +4,11 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
-=======
 import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
->>>>>>> main
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityHomeBinding
