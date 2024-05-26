@@ -91,8 +91,6 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-scalars:2.1.0")
 
 
-
-
     // cameraX
     implementation("androidx.camera:camera-view:1.3.1")
     implementation("androidx.camera:camera-camera2:1.3.1")
@@ -100,6 +98,7 @@ dependencies {
 
     // QR Code
     implementation ("com.google.mlkit:barcode-scanning:17.0.3")
+    implementation("com.google.zxing:core:3.3.0")
 
     //biometric
     implementation("androidx.biometric:biometric:1.2.0-alpha05")

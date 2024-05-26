@@ -6,22 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
+import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.databinding.ActivityLoginBinding
 import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.service.local.QvickDataBase
 import com.hs.dgsw.android.qvick.service.local.TokenDao
 import com.hs.dgsw.android.qvick.service.local.TokenEntity
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.FirebaseRequest
 import com.hs.dgsw.android.qvick.service.remote.request.LoginRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
-import java.util.concurrent.Executor
-import androidx.biometric.BiometricPrompt
-import androidx.core.graphics.drawable.toDrawable
-import com.hs.dgsw.android.qvick.R
 import kotlinx.coroutines.runBlocking
 
 class LoginActivity : AppCompatActivity() {
@@ -34,8 +32,6 @@ class LoginActivity : AppCompatActivity() {
         isVisible = false
     }
 
-
-
     override fun onDestroy() {
         super.onDestroy()
         Log.d("test", "destroy")
@@ -45,6 +41,21 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         UserDataManager.init(this)
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            // Log and toast
+//                val msg = getString(R.string.msg_token_fmt, token)
+//                Log.d(TAG, msg)
+//                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+        })
+
 
         // 회원가입
         binding.GoSignUpBtn.setOnClickListener {
@@ -57,8 +68,8 @@ class LoginActivity : AppCompatActivity() {
 
         // 로그인
         binding.LogoInBtn.setOnClickListener {
-            val user = binding.emailEditText.text.toString()
-            val pass = binding.passwordEditText.text.toString()
+            val user = binding.emailEditText!!.text.toString()
+            val pass = binding.passwordEditText!!.text.toString()
 
             if (user == "" || pass == "") {
                 Toast.makeText(this, "회원정보를 전부 입력해주세요", Toast.LENGTH_SHORT).show()
@@ -80,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }.onSuccess {
                         Log.d(TAG, "onCreate: 로그인 성공")
+
                         service()
 //                        lifecycleScope.launch(Dispatchers.Main) {
 //                            Toast.makeText(this@LoginActivity, "로그인 되었습니다", Toast.LENGTH_SHORT).show()
@@ -99,9 +111,31 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun service() {
 
-        val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken
+        val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken.toString()
+        val fcmToken = QvickDataBase.getInstance(applicationContext)?.fcmTokenDao()?.getMembers()?.fcmToken.toString()
+
+        if (fcmToken != null){
+            lifecycleScope.launch(Dispatchers.IO){
+                Log.d(TAG, "service: ${fcmToken}")
+                kotlin.runCatching {
+                    RetrofitBuilder.getFirebase().postFcm(
+                        accessToken = accessToken,
+                        body = FirebaseRequest(
+                            fcmToken = fcmToken
+                        )
+                    )
+                }.onSuccess {
+                    Log.d(TAG, "service: fcm성공")
+                }.onFailure {
+                    it.printStackTrace()
+                    Log.d(TAG, "service: fcm실패")
+                }
+            }
+        }
 
         if (accessToken != null){
             lifecycleScope.launch(Dispatchers.IO) {
@@ -114,16 +148,18 @@ class LoginActivity : AppCompatActivity() {
                         Log.d(TAG, "service 성공: ${UserDataManager.getName()}")
                     }
                 }.onFailure {
+                    it.printStackTrace()
                     Log.d(TAG, "service: 실패")
                 }
             }
         }
 
+
         lifecycleScope.launch(Dispatchers.Main) {
             Toast.makeText(this@LoginActivity, "로그인 되었습니다", Toast.LENGTH_SHORT).show()
             val intent = Intent(applicationContext, HomeActivity::class.java)
             startActivity(intent)
-            finish()
+//            finish()
         }
     }
     fun changeShowBtn(){

@@ -18,6 +18,13 @@ class SignUpActivity : AppCompatActivity() {
         isVisibleCheck = false
     }
 
+    private var isVisible = false
+    private var isVisibleCheck = false
+    init {
+        isVisible = false
+        isVisibleCheck = false
+    }
+
     private val binding by lazy {
         ActivitySignUpBinding.inflate(layoutInflater)
     }

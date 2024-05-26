@@ -8,9 +8,10 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 
-@Database(entities = [TokenEntity::class], version = 4)
+@Database(entities = [TokenEntity::class, FcmTokenEntity::class], version = 3)
 abstract class QvickDataBase : RoomDatabase() {
     abstract fun tokenDao(): TokenDao
+    abstract fun fcmTokenDao(): FcmTokenDao
 
     companion object {
 
