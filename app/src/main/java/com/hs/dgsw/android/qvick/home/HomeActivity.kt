@@ -6,9 +6,6 @@ import android.content.pm.PackageManager
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.biometric.BiometricPrompt
-import androidx.core.content.ContextCompat
 import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat

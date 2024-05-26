@@ -131,6 +131,24 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/quitBtn"
+        android:layout_width="111dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="회원탈퇴"
+        android:gravity="start"
+        android:background="#3A3F4A"
+        android:textColor="@color/red"
+        android:textSize="18dp"
+        android:stateListAnimator="@null"
+        android:textStyle="bold"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

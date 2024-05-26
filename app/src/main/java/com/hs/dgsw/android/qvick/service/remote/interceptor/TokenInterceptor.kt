@@ -1,5 +1,6 @@
 package com.hs.dgsw.android.qvick.service.remote.interceptor
 
+import android.util.Log
 import com.hs.dgsw.android.qvick.service.local.QvickDataBase
 import com.hs.dgsw.android.qvick.service.local.TokenDao
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
@@ -20,6 +21,7 @@ class TokenInterceptor: Interceptor {
 
 
     override fun intercept(chain: Interceptor.Chain): Response {
+        Log.d("test", "teststesktjtlse")
         runBlocking(Dispatchers.IO) {
             val dao = QvickDataBase.getInstanceOrNull()?: throw RuntimeException()
             tokenDao = dao.tokenDao()
