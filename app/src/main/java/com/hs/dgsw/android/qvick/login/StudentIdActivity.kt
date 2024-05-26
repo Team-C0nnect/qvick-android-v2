@@ -9,10 +9,13 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.databinding.ActivityStudentBinding
 import com.hs.dgsw.android.qvick.privacy.TermsOfUseActivity
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import com.hs.dgsw.android.qvick.service.remote.request.FirebaseRequest
 import com.hs.dgsw.android.qvick.service.remote.request.SignUpRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 class StudentIdActivity : AppCompatActivity() {
@@ -50,9 +53,7 @@ class StudentIdActivity : AppCompatActivity() {
                         )
                     }.onSuccess {
                         Log.d(TAG, "onCreate: 성공!!: $it")
-
                         UserDataManager.setUserData(email, pass, name, room, student)
-
                         intent = Intent(applicationContext, TermsOfUseActivity::class.java)
                         startActivity(intent)
                     }.onFailure {

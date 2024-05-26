@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.hs.dgsw.android.qvick.service.remote.interceptor.TokenInterceptor
 import com.hs.dgsw.android.qvick.service.remote.service.AttendanceService
+import com.hs.dgsw.android.qvick.service.remote.service.FirebaseService
 import com.hs.dgsw.android.qvick.service.remote.service.LoginService
 import com.hs.dgsw.android.qvick.service.remote.service.PrivacyTermsService
 import com.hs.dgsw.android.qvick.service.remote.service.SignUpService
@@ -36,6 +37,7 @@ class RetrofitBuilder {
         private var attendanceService: AttendanceService? = null
         private var signUpService: SignUpService? = null
         private var userService: UserService? = null
+        private var firebaseService: FirebaseService? = null
 
         @Synchronized
         fun getGson(): Gson? {
@@ -118,7 +120,7 @@ class RetrofitBuilder {
         fun getRetrofit(): Retrofit {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl("http://13.125.244.155:8080")
+                    .baseUrl(Url.serverUrl)
                     .client(getOhHttpClient())
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create(getGson()!!))
@@ -127,11 +129,12 @@ class RetrofitBuilder {
             return retrofit!!
         }
 
+        // 토큰이 필요한 서버연결
         @Synchronized
         fun getTokenRetrofit(): Retrofit {
             if (tokenRetrofit == null) {
                 tokenRetrofit = Retrofit.Builder()
-                    .baseUrl("http://13.125.244.155:8080")
+                    .baseUrl(Url.serverUrl)
                     .client(getTokenOhHttpClient())
                     .addConverterFactory(GsonConverterFactory.create(getGson()!!))
                     .build()
@@ -139,11 +142,18 @@ class RetrofitBuilder {
             return tokenRetrofit!!
         }
 
+        @Synchronized
+        fun getFirebase(): FirebaseService {
+            if (firebaseService == null){
+                firebaseService = getTokenRetrofit().create(FirebaseService::class.java)
+            }
+            return firebaseService!!
+        }
 
         @Synchronized
         fun getUserService(): UserService{
             if (userService == null){
-                userService = getRetrofit().create(UserService::class.java)
+                userService = getTokenRetrofit().create(UserService::class.java)
             }
             return userService!!
         }

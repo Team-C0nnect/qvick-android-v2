@@ -6,9 +6,18 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toDrawable
+import com.hs.dgsw.android.qvick.R
 import com.hs.dgsw.android.qvick.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
+
+    private var isVisible = false
+    private var isVisibleCheck = false
+    init {
+        isVisible = false
+        isVisibleCheck = false
+    }
 
     private val binding by lazy {
         ActivitySignUpBinding.inflate(layoutInflater)
@@ -42,6 +51,48 @@ class SignUpActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+        }
+        binding.showBtn.setOnClickListener {
+            changeShowBtn()
+        }
+        binding.showBtn2.setOnClickListener {
+            changeShowCheckBtn()
+        }
+    }
+    fun changeShowBtn(){
+        var lastIndex : Int = 0
+        if (binding.passwordEditText.text?.lastIndex != null){
+            lastIndex = binding.passwordEditText.text?.lastIndex!!+1
+        }
+
+        isVisible = if(isVisible){
+            binding.showBtn.setBackgroundResource(R.drawable.ic_offeye)
+            binding.passwordEditText.inputType = 0x00000081
+            binding.passwordEditText.setSelection(lastIndex)
+            false
+        } else{
+            binding.showBtn.setBackgroundResource(R.drawable.ic_oneye)
+            binding.passwordEditText.inputType = 0x00000091
+            binding.passwordEditText.setSelection(lastIndex)
+            true
+        }
+    }
+    fun changeShowCheckBtn(){
+        var lastIndex : Int = 0
+        if (binding.repasswordEditText.text?.lastIndex != null){
+            lastIndex = binding.repasswordEditText.text?.lastIndex!!+1
+        }
+
+        isVisibleCheck = if(isVisibleCheck){
+            binding.showBtn2.setBackgroundResource(R.drawable.ic_offeye)
+            binding.repasswordEditText.inputType = 0x00000081
+            binding.repasswordEditText.setSelection(lastIndex)
+            false
+        } else{
+            binding.showBtn2.setBackgroundResource(R.drawable.ic_oneye)
+            binding.repasswordEditText.inputType = 0x00000091
+            binding.repasswordEditText.setSelection(lastIndex)
+            true
         }
     }
 }

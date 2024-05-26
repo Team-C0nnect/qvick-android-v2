@@ -98,6 +98,7 @@ dependencies {
 
     // QR Code
     implementation ("com.google.mlkit:barcode-scanning:17.0.3")
+    implementation("com.google.zxing:core:3.3.0")
 
     //biometric
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
