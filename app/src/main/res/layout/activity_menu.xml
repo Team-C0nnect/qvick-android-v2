@@ -114,6 +114,24 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goUseBtn"
+        android:layout_width="111dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="이용 약관"
+        android:background="#3A3F4A"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/goPrivacyBtn"
+        android:stateListAnimator="@null"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logoutBtn"
         android:layout_width="111dp"
         android:layout_height="25dp"
@@ -121,14 +139,32 @@
         android:text="로그아웃"
         android:gravity="start"
         android:background="#3A3F4A"
-        android:textColor="@color/white"
+        android:textColor="@color/red"
         android:stateListAnimator="@null"
         android:textSize="18dp"
         android:textStyle="bold"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/goUseBtn"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/quitBtn"
+        android:layout_width="111dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/pretendard_variable"
+        android:text="회원탈퇴"
+        android:gravity="start"
+        android:background="#3A3F4A"
+        android:textColor="@color/red"
+        android:textSize="18dp"
+        android:stateListAnimator="@null"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoutBtn"
         />
 
 

@@ -7,7 +7,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.POST_NOTIFICATIONS"
@@ -27,6 +27,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".privacy.UseTermsActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
         <activity
@@ -40,17 +43,16 @@
             android:exported="false" />
         <activity
             android:name=".home.HomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".login.StudentIdActivity"
             android:exported="false" />
         <activity
             android:name=".privacy.TermsOfUseActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".login.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".main.StartActivity"
             android:exported="true">
@@ -62,7 +64,7 @@
         </activity>
 
         <service
-            android:name="com.hs.dgsw.android.qvick.login.MessagingService"
+            android:name=".login.MessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -71,13 +73,13 @@
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/start"/>
+            android:resource="@drawable/start" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@android:color/white" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
-
     </application>
+
 </manifest>

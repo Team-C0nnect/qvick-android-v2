@@ -27,7 +27,7 @@ class PrivacyTermsActivity : AppCompatActivity() {
         // html text 불러오기
         lifecycleScope.launch(Dispatchers.Main) {
             kotlin.runCatching {
-                RetrofitBuilder.getUseTermsService().getUseTerms()
+                RetrofitBuilder.getPrivacyTermsService().getPrivacyTerms()
             }.onSuccess { response ->
                 val htmlData = response // 이미 문자열로 된 HTML 데이터
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".privacy.UseTermsActivity">
+
+    <WebView
+        android:id="@+id/serviceText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/pretendard_variable"
+        android:textStyle="bold"
+        android:textSize="19dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/homeBtn"
+        />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/homeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#41C982"
+        android:text="메인으로"
+        android:textStyle="bold"
+        android:fontFamily="@font/pretendard_variable"
+        android:textColor="@color/white"
+        android:textSize="18dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

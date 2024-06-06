@@ -116,26 +116,26 @@ class LoginActivity : AppCompatActivity() {
     private fun service() {
 
         val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken.toString()
-        val fcmToken = QvickDataBase.getInstance(applicationContext)?.fcmTokenDao()?.getMembers()?.fcmToken.toString()
+//        val fcmToken = QvickDataBase.getInstance(applicationContext)?.fcmTokenDao()?.getMembers()?.fcmToken.toString()
 
-        if (fcmToken != null){
-            lifecycleScope.launch(Dispatchers.IO){
-                Log.d(TAG, "service: ${fcmToken}")
-                kotlin.runCatching {
-                    RetrofitBuilder.getFirebase().postFcm(
-                        accessToken = accessToken,
-                        body = FirebaseRequest(
-                            fcmToken = fcmToken
-                        )
-                    )
-                }.onSuccess {
-                    Log.d(TAG, "service: fcm성공")
-                }.onFailure {
-                    it.printStackTrace()
-                    Log.d(TAG, "service: fcm실패")
-                }
-            }
-        }
+//        if (fcmToken != null){
+//            lifecycleScope.launch(Dispatchers.IO){
+//                Log.d(TAG, "service: ${fcmToken}")
+//                kotlin.runCatching {
+//                    RetrofitBuilder.getFirebase().postFcm(
+//                        accessToken = accessToken,
+//                        body = FirebaseRequest(
+//                            fcmToken = fcmToken
+//                        )
+//                    )
+//                }.onSuccess {
+//                    Log.d(TAG, "service: fcm성공")
+//                }.onFailure {
+//                    it.printStackTrace()
+//                    Log.d(TAG, "service: fcm실패")
+//                }
+//            }
+//        }
 
         if (accessToken != null){
             lifecycleScope.launch(Dispatchers.IO) {
@@ -159,7 +159,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this@LoginActivity, "로그인 되었습니다", Toast.LENGTH_SHORT).show()
             val intent = Intent(applicationContext, HomeActivity::class.java)
             startActivity(intent)
-//            finish()
+            finish()
         }
     }
     fun changeShowBtn(){
