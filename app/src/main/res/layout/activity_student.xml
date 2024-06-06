@@ -177,7 +177,7 @@
         android:id="@+id/roomNumberEditText"
         android:layout_width="0dp"
         android:layout_height="38dp"
-        android:hint="ex): 301호"
+        android:hint="ex): 301"
         android:textStyle="bold"
         android:textSize="15dp"
         android:inputType="text"
