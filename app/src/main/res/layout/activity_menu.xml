@@ -31,7 +31,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goProfileBtn"
-        android:layout_width="347dp"
+        android:layout_width="0dp"
         android:layout_height="106dp"
         android:background="@drawable/border"
         android:fontFamily="@font/pretendard_variable"

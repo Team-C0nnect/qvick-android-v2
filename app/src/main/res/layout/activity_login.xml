@@ -158,7 +158,7 @@
         android:layout_marginLeft="180dp"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:text="계정이 없으신가?"
+        android:text="계정이 없으신가요?"
         android:textStyle="bold"
         android:fontFamily="@font/pretendard_variable"
         android:textColor="@color/white"
