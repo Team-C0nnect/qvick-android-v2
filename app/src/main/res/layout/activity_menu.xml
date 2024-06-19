@@ -29,26 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/goProfileBtn"
-        android:layout_width="0dp"
-        android:layout_height="106dp"
-        android:background="@drawable/border"
-        android:fontFamily="@font/pretendard_variable"
-        android:text="1118 윤세욱"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:paddingLeft="15dp"
-        android:paddingRight="20dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginLeft="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-<!--    <TextView-->
+    <!--    <TextView-->
 <!--        android:layout_width="35dp"-->
 <!--        android:layout_height="24dp"-->
 <!--        app:layout_constraintLeft_toLeftOf="parent"-->
@@ -94,6 +75,26 @@
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        android:layout_marginTop="360dp"-->
 <!--        android:layout_marginRight="260dp"/>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goProfileBtn"
+        android:layout_width="0dp"
+        android:layout_height="106dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginRight="23dp"
+        android:background="@drawable/border"
+        android:fontFamily="@font/pretendard_variable"
+        android:paddingLeft="15dp"
+        android:paddingRight="20dp"
+        android:text="1118 윤세욱"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goPrivacyBtn"

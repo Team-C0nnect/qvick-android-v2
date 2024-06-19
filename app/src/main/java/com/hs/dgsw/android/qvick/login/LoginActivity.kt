@@ -40,7 +40,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        UserDataManager.init(this)
 
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
@@ -141,12 +140,8 @@ class LoginActivity : AppCompatActivity() {
             lifecycleScope.launch(Dispatchers.IO) {
                 kotlin.runCatching {
                     RetrofitBuilder.getUserService().getUser(accessToken)
-                }.onSuccess { userResponse ->
-                    // 사용자 정보를 가져와서 UserDataManager를 통해 저장합니다.
-                    userResponse?.let {
-                        UserDataManager.setUserData(email = it.email, password = it.password, name = it.name, room = it.room, stdId = it.stdId)
-                        Log.d(TAG, "service 성공: ${UserDataManager.getName()}")
-                    }
+                }.onSuccess {
+                    Log.d(TAG, "service: 로그인 성공")
                 }.onFailure {
                     it.printStackTrace()
                     Log.d(TAG, "service: 실패")

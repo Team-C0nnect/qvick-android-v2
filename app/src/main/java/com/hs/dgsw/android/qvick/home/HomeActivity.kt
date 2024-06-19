@@ -1,6 +1,7 @@
 package com.hs.dgsw.android.qvick.home
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -13,8 +14,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityHomeBinding
-import com.hs.dgsw.android.qvick.login.UserDataApplication
-import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.service.local.QvickDataBase
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import com.hs.dgsw.android.qvick.service.remote.request.AttendanceRequest
@@ -31,36 +30,30 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        UserDataApplication.init(this)
-        UserDataManager.init(this)
-
-        val application = UserDataApplication.getApplication()
-        val name = UserDataManager.getName()
 
 
-        if (application == false){
-            binding.checkText.setText("출석미완료")
-            binding.checkText.setTextColor(Color.RED)
-        } else{
-            binding.checkText.setText("출석완료")
-            binding.checkText.setTextColor(Color.GREEN)
-        }
-
-        Log.d("hometext", "${name}")
+//        kotlin.runCatching {
+//            checkAttendance()
+//        }
 
 
         lifecycleScope.launch(Dispatchers.IO){
             val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken.toString()
-
             kotlin.runCatching {
-                RetrofitBuilder.getAttendanceRequestService().getAttendance(accessToken)
-            }.onSuccess {
-                UserDataApplication.setUserData(true)
+                RetrofitBuilder.getUserService().getUser(accessToken)
+            }.onSuccess {value->
+                if (value.data.checked){
+                    binding.checkText.setText("출석완료")
+                    binding.checkText.setTextColor(Color.GREEN)
+                } else{
+                    binding.checkText.setText("출석미완료")
+                    binding.checkText.setTextColor(Color.RED)
+                }
+
             }.onFailure {
-                UserDataApplication.setUserData(false)
+                it.printStackTrace()
             }
         }
-
 
         // 메뉴 화면으로 이동
         binding.settingBtn.setOnClickListener {
@@ -73,10 +66,18 @@ class HomeActivity : AppCompatActivity() {
             cameraService()
         }
     }
+
+    private fun checkAttendance() {
+
+    }
+
     companion object {
         private const val REQUEST_CODE_PERMISSIONS = 10
         private const val REQUIRED_PERMISSIONS = android.Manifest.permission.CAMERA
     }
+
+
+
     private fun cameraService(){
         if (allPermissionsGranted()) {
             Log.d(ContentValues.TAG, "onCreate: 성공1")

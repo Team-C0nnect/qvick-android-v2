@@ -1,9 +1,10 @@
 package com.hs.dgsw.android.qvick.menu
 
+import android.content.ContentValues.TAG
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -11,11 +12,9 @@ import com.hs.dgsw.android.qvick.privacy.PrivacyTermsActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityMenuBinding
 import com.hs.dgsw.android.qvick.home.HomeActivity
 import com.hs.dgsw.android.qvick.login.LoginActivity
-import com.hs.dgsw.android.qvick.login.UserDataManager
 import com.hs.dgsw.android.qvick.privacy.UseTermsActivity
 import com.hs.dgsw.android.qvick.profile.ProfileActivity
 import com.hs.dgsw.android.qvick.service.local.QvickDataBase
-import com.hs.dgsw.android.qvick.service.local.TokenEntity
 import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,12 +28,11 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        UserDataManager.init(this)
 
-        val stdId = UserDataManager.getStdId()
-        val name = UserDataManager.getName()
+        kotlin.runCatching {
+            getUserData()
+        }
 
-        binding.goProfileBtn.text = stdId+name
 
         // 프로필 화면으로 이동
         binding.goProfileBtn.setOnClickListener {
@@ -81,6 +79,25 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun getUserData() {
+        Log.d(TAG, "getUserData: 됬으여")
+
+
+        lifecycleScope.launch(Dispatchers.IO){
+            val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken.toString()
+            kotlin.runCatching {
+                RetrofitBuilder.getUserService().getUser(accessToken)
+            }.onSuccess { value ->
+                binding.goProfileBtn.setText(value.data.stdId+" "+value.data.name)
+                Log.d(TAG, "getUserData: ${value.data.stdId+""+value.data.name}")
+            }.onFailure { 
+                it.printStackTrace()
+                Log.d(TAG, "getUserData: 실패")
+            }
+        }
+    }
+
     fun quit(){
         MaterialAlertDialogBuilder(this)
             .setMessage("정말로 탈퇴하시겠습니까?")

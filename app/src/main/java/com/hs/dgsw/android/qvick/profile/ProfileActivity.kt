@@ -4,10 +4,14 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.hs.dgsw.android.qvick.menu.MenuActivity
 import com.hs.dgsw.android.qvick.databinding.ActivityProfileBinding
-import com.hs.dgsw.android.qvick.login.UserDataApplication
 import com.hs.dgsw.android.qvick.login.UserDataManager
+import com.hs.dgsw.android.qvick.service.local.QvickDataBase
+import com.hs.dgsw.android.qvick.service.remote.RetrofitBuilder
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -17,25 +21,12 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        UserDataManager.init(this)
-        UserDataApplication.init(this)
 
-        val name = UserDataManager.getName()
-        val stdId = UserDataManager.getStdId()
-        val room = UserDataManager.getRoom()
-        val application = UserDataApplication.getApplication()
 
-        // 상태 값 변경
-        binding.nameEditText.setText(name)
-        binding.studentIDEditText.setText(stdId)
-        binding.roomNumberEditText.setText(room)
-        if (application == false){
-            binding.AttendanceEditText.setText("미출석")
-            binding.AttendanceEditText.setTextColor(Color.RED)
-        } else{
-            binding.AttendanceEditText.setText("출석")
-            binding.AttendanceEditText.setTextColor(Color.GREEN)
+        kotlin.runCatching {
+            getUserData()
         }
+
 
         // 이전 버튼
         binding.backBtn.setOnClickListener {
@@ -45,22 +36,25 @@ class ProfileActivity : AppCompatActivity() {
 
 //        fetchStudentData()
     }
-//    private fun fetchStudentData(){
-//        try {
-//            // 학번 불러오기
-//            lifecycleScope.launch(Dispatchers.IO){
-//                val call = RetrofitBuilder.getStudentService().getStudent()
-//                binding.studentIDEditText.setText(call.stdId)
-//            }
-//            // 기숙사 호실 불러오기
-//            lifecycleScope.launch(Dispatchers.IO){
-//                val call = RetrofitBuilder.getRoomService().getRoom()
-//                binding.roomNumberEditText.setText(call.roomID)
-//            }
-//        } catch (e:Exception){
-//            intent = Intent(this, EditProfileActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//    }
+
+    private fun getUserData() {
+        lifecycleScope.launch(Dispatchers.IO){
+            val accessToken = QvickDataBase.getInstance(applicationContext)?.tokenDao()?.getMembers()?.accessToken.toString()
+            kotlin.runCatching {
+                RetrofitBuilder.getUserService().getUser(accessToken)
+            }.onSuccess { value ->
+                binding.nameEditText.setText(value.data.name)
+                binding.studentIDEditText.setText(value.data.stdId)
+                binding.roomNumberEditText.setText(value.data.room)
+
+                if (value.data.checked){
+                    binding.AttendanceEditText.setText("출석")
+                    binding.AttendanceEditText.setTextColor(Color.GREEN)
+                } else{
+                    binding.AttendanceEditText.setText("미출석")
+                    binding.AttendanceEditText.setTextColor(Color.RED)
+                }
+            }
+        }
+    }
 }

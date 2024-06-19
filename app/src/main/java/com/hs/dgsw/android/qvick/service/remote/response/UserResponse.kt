@@ -9,16 +9,16 @@ data class UserResponse (
     val name: String,
     @field:SerializedName("email")
     val email: String,
-    @field:SerializedName("phoneNum")
-    val phoneNum: String,
     @field:SerializedName("password")
     val password: String,
     @field:SerializedName("stdId")
     val stdId: String,
     @field:SerializedName("room")
     val room: String,
-    @field:SerializedName("approval")
-    val approval: String,
     @field:SerializedName("userRole")
     val userRole: String,
+    @field:SerializedName("checkedDate")
+    val checkedDate: String,
+    @field:SerializedName("checked")
+    val checked: Boolean,
 )
