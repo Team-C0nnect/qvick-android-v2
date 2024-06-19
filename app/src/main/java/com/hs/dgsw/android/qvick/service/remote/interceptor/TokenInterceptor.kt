@@ -46,7 +46,7 @@ class TokenInterceptor: Interceptor {
                     // 재발급
                     token = RetrofitBuilder.getTokenService().postRefreshToken(
                         TokenRequest(refreshToken)
-                    ).accessToken
+                    ).data.accessToken
 
 
                     // 재발급된 토큰으로 재실행

@@ -180,7 +180,7 @@
         android:hint="ex): 301"
         android:textStyle="bold"
         android:textSize="15dp"
-        android:inputType="text"
+        android:inputType="number"
         android:textColor="@color/white"
         android:gravity="start"
         android:paddingLeft="40dp"

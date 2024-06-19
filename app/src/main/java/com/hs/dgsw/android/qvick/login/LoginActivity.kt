@@ -84,8 +84,8 @@ class LoginActivity : AppCompatActivity() {
                         ).let {result ->
                             QvickDataBase.getInstance(applicationContext)?.tokenDao()?.insertMember(
                                 TokenEntity(
-                                    accessToken = result.accessToken,
-                                    refreshToken = result.refreshToken
+                                    accessToken = result.data.accessToken,
+                                    refreshToken = result.data.refreshToken
                                 )
                             )
                         }
