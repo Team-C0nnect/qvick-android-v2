@@ -14,6 +14,7 @@
         tools:node="remove" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -28,37 +29,47 @@
         tools:targetApi="31">
         <activity
             android:name=".privacy.UseTermsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".login.SignUpActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".menu.MenuActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".profile.ProfileActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".privacy.PrivacyTermsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".home.HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".login.StudentIdActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".privacy.TermsOfUseActivity"
-            android:exported="false"></activity>
+            android:screenOrientation="portrait"
+            android:exported="false"/>
         <activity
             android:name=".login.LoginActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".main.StartActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
